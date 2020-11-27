@@ -18,14 +18,16 @@ function createHierarchy(element) {
   }
 }
 
-var p = document.createElement("p")
-p.textContent = "HTML: "
-domTree.appendChild(p)
+function displayHTMLText() {
+  var p = document.createElement("p")
+  p.textContent = "HTML: "
+  domTree.appendChild(p)
 
-createHierarchy(userWebsite)
+  createHierarchy(userWebsite)
+}
 
 
-userWebsite.addEventListener("click", function(e) {
+function displayElement(e) {
   const target = e.target
   if (target.attachedDomTreeElement) {
 
@@ -104,7 +106,7 @@ userWebsite.addEventListener("click", function(e) {
 
 
   }
-})
+}
 
 
 //createDomTree()
