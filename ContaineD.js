@@ -1,9 +1,5 @@
-// THE CULPRITS
-
-var domTree = document.getElementById("element-in-hierarchy")
-
 function ContaineD() {
-  this.list = null
+  this.domTree = document.getElementById("element-in-hierarchy")
 }
 
 ContaineD.prototype = {
@@ -21,10 +17,9 @@ ContaineD.prototype = {
   },
 
   displayHTMLText: function () {
-    console.log("hehe")
     var p = document.createElement("p")
     p.textContent = "HTML: "
-    domTree.appendChild(p)
+    this.domTree.appendChild(p)
   },
 
 
@@ -55,7 +50,7 @@ ContaineD.prototype = {
       var para = document.createElement("para")
       para.textContent = "Currently viewing: " + "<" + target.tagName.toLowerCase() + attributeString + ">\n"
       para.setAttribute('id', 'elementCurrentlyViewing');
-      domTree.appendChild(para)
+      this.domTree.appendChild(para)
 
       // parent element of the element we are currently viewing
       var attributeString = ""
@@ -65,7 +60,7 @@ ContaineD.prototype = {
       var para = document.createElement("para")
       para.textContent = "Direct parent: " + "<" + target.parentElement.tagName.toLowerCase() + attributeString + ">\n"
       para.setAttribute('id', 'elementDirectParent');
-      domTree.appendChild(para)
+      this.domTree.appendChild(para)
 
 
 
@@ -102,7 +97,7 @@ ContaineD.prototype = {
         div.appendChild(para)
       }
 
-      domTree.appendChild(div)
+      this.domTree.appendChild(div)
     }
   }
 
