@@ -1,8 +1,13 @@
+var containeD = new ContaineD()
+
 var userWebsite = document.getElementById("userWebsite")
 
-displayHTMLText()
+containeD.displayHTMLText()
+containeD.createHierarchy(userWebsite)
 
 userWebsite.addEventListener("click", function a(e) {
-	displayElement(e)
+	containeD.displayElement(e)
 })
+
+
 
