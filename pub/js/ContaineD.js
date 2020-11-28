@@ -2,8 +2,8 @@ function ContaineD() {
   this.domTree = document.getElementById("element-in-hierarchy")
 }
 
-ContaineD.prototype = {
-  createHierarchy: function (element) {
+ContaineD.prototype = { // prototype just declares functions 
+  createHierarchy: function (element) { // from line 7 to line 15, this is not my code, I got it from https://jsfiddle.net/nkys3jrL/10/, the function walkElement() which are from line 14 to line 28
     var span = document.createElement("span")
     span.textContent = "<" + element.tagName.toLowerCase() + ">" + "\n"
     span.attachedElement = element
