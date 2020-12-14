@@ -3,6 +3,29 @@ function ContaineD() {
 }
 
 ContaineD.prototype = { // prototype just declares functions 
+
+  selectMode: function () { // select whether to be in debug mode or creative mode
+
+    var modeDiv = document.createElement("div")
+    modeDiv.id = "modeSelectionDiv"
+    modeDiv.style.margin = "12px";
+    this.domTree.append(modeDiv)
+
+    var debugButton = document.createElement("BUTTON")
+    debugButton.id = "debugButton"
+    debugButton.textContent = "Debug Mode"
+    modeDiv.append(debugButton)
+
+    var creativeButton = document.createElement("BUTTON")
+    creativeButton.id = "creativeButton"
+    creativeButton.textContent = "Creative Mode"
+    creativeButton.style.margin = "7px"
+    modeDiv.append(creativeButton)
+
+
+  },
+ 
+
   createHierarchy: function (element) { // from line 7 to line 15, this is not my code, I got it from https://jsfiddle.net/nkys3jrL/10/, the function walkElement() which are from line 14 to line 28
     var span = document.createElement("span")
     span.textContent = "<" + element.tagName.toLowerCase() + ">" + "\n"
@@ -99,6 +122,16 @@ ContaineD.prototype = { // prototype just declares functions
 
       this.domTree.appendChild(div)
     }
+  },
+
+
+  // creative mode.
+  gridMode: function(e) { // allows for CSS grid style 
+    var ptag = document.createElement("p")
+    ptag.textContent = "Creative Mode"
+
+    const target = e.target 
+
   }
 
 
