@@ -91,6 +91,8 @@ ContaineD.prototype = { // prototype just declares functions
       onHoverPlayState = "running"
     }
 
+    console.log("cardSelector: ", cardSelector)
+
     $(`${cardSelector}`).hover(
       function() {
         //$(".containeD-containeR").find(`.${cardSelector}`).css("animationPlayState", `${onHoverPlayState}`) // do this if you want ALL cards to be affected

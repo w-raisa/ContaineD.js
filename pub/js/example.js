@@ -76,7 +76,7 @@ var animationSequence3 = {
 // change the animation of one single card
 var uniqueDynamicCard = document.getElementById("dynamic-card-id-1")
 var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-1")
-containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", "running", animationSequence3, "b")
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", "running", animationSequence3, "c")
 
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")
