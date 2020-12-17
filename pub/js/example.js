@@ -14,22 +14,23 @@ var containeD = new ContaineD(gridElement, {
 	isCentered: true, // default false
 })
 
-
+// do the following to get all triggers to have to same animation for their individual cards.
 var triggerBox = document.querySelector(".containeD-trigger")
 var cardBox1 = document.querySelector(".containeD-box1")
 var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
+containeD.translatingCards(triggerBox, cardBox1, 300, 200, 200, 20)
+containeD.translatingCards(triggerBox, cardBox2, 400, 100, 200, 20)
+containeD.translatingCards(triggerBox, cardBox3, 600, 0, 200, 20)
+containeD.translatingCards(triggerBox, cardBox4, 800, -100, 200, 20)
 
-containeD.translatingCards(triggerBox, cardBox1, 300, 200, 200, 0, "1")
-containeD.translatingCards(triggerBox, cardBox2, 400, 100, 200, 0, "2")
-containeD.translatingCards(triggerBox, cardBox3, 600, 0, 200, 20, "3")
-containeD.translatingCards(triggerBox, cardBox4, 800, -100, 200, 20, "4")
 
-// var triggerBoxes = document.querySelectorAll('.containeD-trigger');
-// console.log("triggerBoxes: ", triggerBoxes)
-// var card = triggerBoxes[2].querySelector('.containeD-box1');
-// containeD.translatingCards(triggerBoxes[2], card, 100, -100, 200, 360, "5")
+// do the following to change one card's animation of one trigger, developer using this library must provide ids.
+// here we are changing card1 of 
+var chosenTriggerBox = document.getElementById('containeD-trigger3');
+var card1 = document.getElementById('containeD-box1-id');
+containeD.translateCard(chosenTriggerBox, card1, 100, -100, 200, 360)
 
 
 

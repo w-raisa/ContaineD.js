@@ -65,6 +65,27 @@ ContaineD.prototype = { // prototype just declares functions
     });
   },
 
+  translateCard: function(triggerBox, cardBox, speed, translateX, translateY, rotationDeg) {
+    triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
+
+    var containeD_containeR = document.querySelector(".containeD-containeR")
+    containeD_containeR.appendChild(triggerBox)
+
+    $(`#${cardBox.id}`).css("transition", `transform ${speed}ms ease-in-out`) 
+
+    //$( ".containeD-trigger" ).hover(
+    $(`#${triggerBox.id}`).hover(
+    function() {
+      //$(this).toggleClass("box")
+      $(this).find(`#${cardBox.id}`).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
+    },
+    function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+      $(this).find(`#${cardBox.id}`).css("transform", "translate(0px, 0px)")
+      // $( this ).fadeOut( 100 );
+      // $( this ).fadeIn( 200 );
+    });
+  },
+
 
   createGrid: function(gridElement, numContainers, containerSize) {
     for (var i = 1; i <= numContainers; i++) {
