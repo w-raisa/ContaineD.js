@@ -53,8 +53,8 @@ ContaineD.prototype = { // prototype just declares functions
     });
   },
 
-  cardBackgroundColourTransition: function(cardBox, startingColour, endingColour, speed, x) {
-    cardBox.style.animation = `${x} ${speed}s infinite`;
+  backgroundColourTransition: function(box, startingColour, endingColour, speed, x) {
+    box.style.animation = `${x} ${speed}s infinite`;
     var cssAnimation = document.createElement('style')
     cssAnimation.type = 'text/css'
     var rules = document.createTextNode(
@@ -65,28 +65,8 @@ ContaineD.prototype = { // prototype just declares functions
       "}"
       );
     cssAnimation.appendChild(rules);
-    triggerBox.appendChild(cssAnimation);
+    box.appendChild(cssAnimation);
   },
-
-  trBackgroundColourTransition: function(triggerBox, startingColour, endingColour, speed, x) {
-    triggerBox.style.animation = `${x} ${speed}s infinite`;
-    var cssAnimation = document.createElement('style')
-    cssAnimation.type = 'text/css'
-    var rules = document.createTextNode(
-      `@-webkit-keyframes ${x} {` +
-      `0% { background-color: ${startingColour}; }` +
-      `50% { background-color: ${endingColour}; }` +
-      `100% { background-color: ${startingColour}; }` +
-      "}"
-      );
-    cssAnimation.appendChild(rules);
-    triggerBox.appendChild(cssAnimation);
-  },
-
-
-
-
-
 
   createGrid: function(gridElement, numContainers, containerSize) {
     for (var i = 1; i <= numContainers; i++) {

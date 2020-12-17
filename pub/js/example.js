@@ -11,7 +11,7 @@ var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
 containeD.translatingCards(triggerBox, cardBox1, 300, "ease-in-out", 200, 200, 0, 0, 20)
-containeD.cardBackgroundColourTransition(cardBox1, "pink", "red", 1, "ll")
+containeD.backgroundColourTransition(cardBox1, "pink", "red", 1, "ll")
 containeD.translatingCards(triggerBox, cardBox2, 900, "cubic-bezier(1,-1.02,.13,.87)", 100, 200, 0, 0, 20)
 containeD.translatingCards(triggerBox, cardBox3, 600, "ease-in-out", 0, 200, 0, 0, 20)
 containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -100, 200, 0, 0, 20)
@@ -30,9 +30,8 @@ var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
 var card5 = document.getElementById('hehexd');
 containeD.translateCard(chosenTriggerBox2, card5, "linear", 400, 0, 200, 0, 0, 180)
 
-containeD.cardBackgroundColourTransition(card5, "pink", "red", 1, "ll")
-
-containeD.trBackgroundColourTransition(triggerBox, "pink", "red", 1, "ll")
+containeD.backgroundColourTransition(card5, "pink", "red", 1, "ll")
+containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "ll")
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")
 // //containeD.openCoverEffect(gridElement1, gridElement)
