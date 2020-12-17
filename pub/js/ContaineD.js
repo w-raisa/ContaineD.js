@@ -74,16 +74,34 @@ ContaineD.prototype = { // prototype just declares functions
     var cssAnimation2 = document.createElement('style')
     cssAnimation2.type = 'text/css'
 
-    var animationSeqStr = `@-webkit-keyframes ${x} {`;
-    for (var i = 0; i < animationSeq.length; i++) {
-      animationSeqStr = animationSeqStr + 
-        `${animationSeq[i]} `
+    var dummystr = `@-webkit-keyframes ${x} {`;
+    //var dummystr = ""
+    for (var key in animationSeq) {
+      dummystr += ` ${key} {`
+      for (var animationStepKey in animationSeq[key]) {
+        console.log("key: ", key)
+        console.log("animationStepKey: ", animationStepKey)
+        dummystr += `${animationStepKey}: ${animationSeq[key][animationStepKey]}; ` 
+      }
+      dummystr += `}`
     }
-    animationSeqStr += "}"
-    var rules2 = document.createTextNode(animationSeqStr)
+    dummystr += `}`
+    console.log("dummystr: ", dummystr)
+
+    var rules2 = document.createTextNode(dummystr)
 
     cssAnimation2.appendChild(rules2);
     card.appendChild(cssAnimation2);
+    // var animationSeqStr = `@-webkit-keyframes ${x} {`;
+    // for (var i = 0; i < animationSeq.length; i++) {
+    //   animationSeqStr = animationSeqStr + 
+    //     `${animationSeq[i]} `
+    // }
+    // animationSeqStr += "}"
+    // var rules2 = document.createTextNode(animationSeqStr)
+
+    // cssAnimation2.appendChild(rules2);
+    // card.appendChild(cssAnimation2);
   },
 
   dynamicRunningCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x, trigger = null) { 

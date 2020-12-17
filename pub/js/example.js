@@ -45,21 +45,32 @@ var animationSequence1 = [
 	"0% {transform: scale(0)}",
 	"100% {transform: scale(1)}",
 	"100% {opacity: 1}",
-	"50% {opacity: 0.2}",
+	"50% {opacity: 0}",
 	]
-var animationSequence2	= [
-	`0% {
-		left: 0; 
-		background: blue;
-	}`,
-	`100% {
-		left: 10%; 
-		background: lightblue;
-	 }`,
-	]
+// var animationSequence2	= [
+// 	`0% {
+// 		left: 0; 
+// 		background: blue;
+// 	}`,
+// 	`100% {
+// 		left: 10%; 
+// 		background: lightblue;
+// 	 }`,
+// 	]
+
+var animationSequence2 = {
+	"0%": {
+		"left": "0", 
+		"background": "blue",
+		},
+	"100%": {
+		"left": "10%", 
+		"background": "lightblue",
+		},
+}
 // containeD.dynamicRunningCard(card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, "alternate", animationSequence1, "a")
-//containeD.dynamicPausingCard(card, "linear", "infinite", 5, "alternate", animationSequence2, "b", trigger)
-// containeD.dynamicCard(card, "ease-in-out", "infinite", 5,"alternate", animationSequence1, "c")
+//containeD.dynamicPausingCard(card, "linear", "infinite", 5, "alternate", animationSequence1, "b", trigger)
+containeD.dynamicCard(trigger, "ease-in-out", "infinite", 1,"alternate", animationSequence2, "c")
 
 
 
