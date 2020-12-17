@@ -57,7 +57,7 @@ var animationSequence2 = {
 		"background": "lightblue",
 		},
 }
-containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 5, "alternate", "paused", animationSequence2, "b", card) // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
+containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 5, "alternate", "paused", animationSequence2, "b", trigger) // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
 // containeD.dynamicCard(trigger, "ease-in-out", "infinite", 1,"alternate", animationSequence2, "c")
 
 
