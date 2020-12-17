@@ -68,39 +68,74 @@ ContaineD.prototype = { // prototype just declares functions
     box.appendChild(cssAnimation);
   },
 
-  movingCardPause: function(card, timeFunction, iterationCount, speed, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
-    // card.style.animationName = `${x}`
-    // card.style.animationTimingFunction = `${timeFunction}`
-    // card.style.animationIterationCount = `${iterationCount}`
-    // card.style.animationPlayState = `${playState}`
-    card.style.animation = `${x} ${speed}s infinite`;
+  dynamicCard: function(card, timeFunction, iterationCount, speed, animationSeq, x) {
+    // runs animation without hover
+    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount}`;
     var cssAnimation2 = document.createElement('style')
     cssAnimation2.type = 'text/css'
-    var rules2 = document.createTextNode(
-      `@-webkit-keyframes ${x} {` +
-        `0% {height: 100px;}` +
-        `50% {height: 300px;}` +
-        `100% {height: 350px;}` +
-      "}"
-    );
+
+    var animationSeqStr = `@-webkit-keyframes ${x} {`;
+    for (var i = 0; i < animationSeq.length; i++) {
+      animationSeqStr = animationSeqStr + 
+        `${animationSeq[i]} `
+    }
+    animationSeqStr += "}"
+    var rules2 = document.createTextNode(animationSeqStr)
+
+    cssAnimation2.appendChild(rules2);
+    card.appendChild(cssAnimation2);
+  },
+
+  dynamicRunningCard: function(trigger, card, timeFunction, iterationCount, speed, animationSeq, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
+    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount}`;
+    var cssAnimation2 = document.createElement('style')
+    cssAnimation2.type = 'text/css'
+
+    var animationSeqStr = `@-webkit-keyframes ${x} {`;
+    for (var i = 0; i < animationSeq.length; i++) {
+      animationSeqStr = animationSeqStr + 
+        `${animationSeq[i]} `
+    }
+    animationSeqStr += "}"
+    var rules2 = document.createTextNode(animationSeqStr)
 
     cssAnimation2.appendChild(rules2);
     card.appendChild(cssAnimation2);
 
-    $(`.${card.className}`).hover(
+    $(`.${trigger.className}`).hover(
     function() {
-      console.log("clicked")
       card.style.animationPlayState = "paused"
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
       card.style.animationPlayState = "running"
-      // $( this ).fadeOut( 100 );
-      // $( this ).fadeIn( 200 );
     });
-
-
   },
 
+
+  dynamicPausingCard: function(trigger, card, timeFunction, iterationCount, speed, animationSeq, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
+    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} paused`;
+    var cssAnimation2 = document.createElement('style')
+    cssAnimation2.type = 'text/css'
+    var animationSeqStr = `@-webkit-keyframes ${x} {`;
+    for (var i = 0; i < animationSeq.length; i++) {
+      animationSeqStr = animationSeqStr + 
+        `${animationSeq[i]} `
+    }
+    animationSeqStr += "}"
+    var rules2 = document.createTextNode(animationSeqStr)
+
+    cssAnimation2.appendChild(rules2);
+    card.appendChild(cssAnimation2);
+
+    $(`.${trigger.className}`).hover(
+    function() {
+      card.style.animationPlayState = "running"
+    },
+    function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+      card.style.animationPlayState = "paused"
+    });
+
+  },
 
 
 

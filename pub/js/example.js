@@ -34,10 +34,19 @@ containeD.backgroundColourTransition(card5, "orange", "green", 1, "kk")
 containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
 
 
-var card = document.querySelector(".containeD-trigger-single-card")
-console.log("card: ", card)
-containeD.movingCardPause(card, "ease-in-out", "infinite", 5, "a")
+var card = document.querySelector(".containeD-dynamic-card")
+var trigger = document.querySelector(".containeD-dynamic-trigger-card")
+var animationSequence = [
+	"20% {height: 100px;}", 
+	"40% {height: 200px;}", 
+	"60% {height: 300px;}", 
+	"80% {height: 325px;}", 
+	"100% {height: 350px;}"
+	]
+//containeD.dynamicRunningCard(trigger, card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, animationSequence, "a")
+//containeD.dynamicPausingCard(trigger, card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, animationSequence, "b")
 
+containeD.dynamicCard(card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, animationSequence, "b")
 
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")
