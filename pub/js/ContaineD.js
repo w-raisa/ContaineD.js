@@ -68,7 +68,7 @@ ContaineD.prototype = { // prototype just declares functions
     box.appendChild(cssAnimation);
   },
 
-  movingCardPause: function(card, timeFunction, iterationCount, playState, speed, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
+  movingCardPause: function(card, timeFunction, iterationCount, speed, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
     // card.style.animationName = `${x}`
     // card.style.animationTimingFunction = `${timeFunction}`
     // card.style.animationIterationCount = `${iterationCount}`
@@ -90,7 +90,7 @@ ContaineD.prototype = { // prototype just declares functions
     $(`.${card.className}`).hover(
     function() {
       console.log("clicked")
-      card.style.animationPlayState = `${playState}`
+      card.style.animationPlayState = "paused"
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
       card.style.animationPlayState = "running"

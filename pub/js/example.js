@@ -36,7 +36,7 @@ containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
 
 var card = document.querySelector(".containeD-trigger-single-card")
 console.log("card: ", card)
-containeD.movingCardPause(card, "ease-in-out", "infinite", "paused", 5, "a")
+containeD.movingCardPause(card, "ease-in-out", "infinite", 5, "a")
 
 
 
