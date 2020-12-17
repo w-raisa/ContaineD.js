@@ -54,22 +54,19 @@ ContaineD.prototype = { // prototype just declares functions
     box.appendChild(cssAnimation);
   },
 
-  dynamicCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x) {
-    // can use it on one card or many.
-    // runs animation without hover
-    //card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`;
-    $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`) 
-    this.formatWebKitAnimationStr(x, animationSeq)
-  },
-
-  dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationPlayState, animationSeq, x) { 
+  dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x, animationPlayState=null) { 
     /* 
     use this to get all cards to have this animation. no card will have a unique animation if using this. all cards will have the same animation
     cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause 
     */
     this.formatWebKitAnimationStr(x, animationSeq)
-  
-    $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+    if (animationPlayState === null) {
+      $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`) 
+      return
+    }
+    else {
+      $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+    }
 
     this.hoverHandler(`.${card.className}`, animationPlayState)
   },
