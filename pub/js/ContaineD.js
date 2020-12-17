@@ -59,106 +59,51 @@ ContaineD.prototype = { // prototype just declares functions
     cssAnimation.type = 'text/css'
     var rules = document.createTextNode(
       `@-webkit-keyframes ${x} {` +
-      `0% { background-color: ${startingColour}; }` +
-      `50% { background-color: ${endingColour}; }` +
-      `100% { background-color: ${startingColour}; }` +
+        `0% {background-color: ${startingColour};}` +
+        `50% {background-color: ${endingColour};}` +
+        `100% {background-color: ${startingColour};}` +
       "}"
-      );
+    );
     cssAnimation.appendChild(rules);
     box.appendChild(cssAnimation);
   },
 
-  createGrid: function(gridElement, numContainers, containerSize) {
-    for (var i = 1; i <= numContainers; i++) {
-      const gridContainer = document.createElement("div") // create a div container
-      gridContainer.style.wordWrap = "break-word"
-      gridContainer.id = "grid-item grid-item-" + i 
-      gridContainer.textContent = "Grid-Item " + i
-      gridContainer.style.border = "solid black 1px"
-      gridContainer.style.overflow = "auto"
-      gridElement.append(gridContainer)
-    }
+  movingCardPause: function(card, timeFunction, iterationCount, playState, speed, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
+    // card.style.animationName = `${x}`
+    // card.style.animationTimingFunction = `${timeFunction}`
+    // card.style.animationIterationCount = `${iterationCount}`
+    // card.style.animationPlayState = `${playState}`
+    card.style.animation = `${x} ${speed}s infinite`;
+    var cssAnimation2 = document.createElement('style')
+    cssAnimation2.type = 'text/css'
+    var rules2 = document.createTextNode(
+      `@-webkit-keyframes ${x} {` +
+        `0% {height: 100px;}` +
+        `50% {height: 300px;}` +
+        `100% {height: 350px;}` +
+      "}"
+    );
+
+    cssAnimation2.appendChild(rules2);
+    card.appendChild(cssAnimation2);
+
+    $(`.${card.className}`).hover(
+    function() {
+      console.log("clicked")
+      card.style.animationPlayState = `${playState}`
+    },
+    function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+      card.style.animationPlayState = "running"
+      // $( this ).fadeOut( 100 );
+      // $( this ).fadeIn( 200 );
+    });
+
+
   },
 
-  applyColumnSpace: function(gridElement, columnSpacing) {
-    var s = ""
-    for (var i = 0; i < columnSpacing.length; i++) { 
-      if (i == (columnSpacing.length - 1)) {
-        s += columnSpacing[i] + "px" 
-      }
-      else {
-        s += columnSpacing[i] + "px "
-      }
-    }
-    gridElement.style.gridTemplateColumns = s
-  },
-
-  applyMinColumnSize: function(gridElement, minColumnSize) {
-    gridElement.style.gridAutoColumns = `minmax(${minColumnSize}px, auto)`
-  },
-
-  applyRepeatedColumns: function(gridElement, repeatColumns) {
-    gridElement.style.gridTemplateColumns = `repeat(${repeatColumns[0]}, ${repeatColumns[1]}px)`
-  },
-
-  applyColumnGap: function(gridElement, columnGap) {
-    gridElement.style.gridColumnGap = columnGap + "px"
-  },
-
-  applyRowGap: function(gridElement, rowGap) {
-    gridElement.style.gridRowGap = rowGap + "px"
-  },
-
-  applyCentered: function(gridElement) {
-    gridElement.style.justifyContent = "center"
-  },
-
-  setGridCellColumnPositioning: function(gridElement, start, end) {
-    gridElement.style.gridColumnStart = start
-    gridElement.style.gridColumnEnd = end + 1 // must do +1 because it isn't obv to user otherwise
-  },
-
-  setGridCellRowPositioning: function(gridElement, start, end) {
-    gridElement.style.gridRowStart = start
-    gridElement.style.gridRowEnd = end + 1 // must do +1 because it isn't obv to user otherwise
-  },
-
-  setGridCellImage: function(gridElement, imagePath) {
-    var img = document.createElement("img"); 
-    img.src = imagePath;
-    img.style.maxWidth = "100%"
-    img.style.maxHeight = "100%"
-    img.style.display = "block"
-    gridElement.style.objectFit = "end"
-    gridElement.appendChild(img);
-  },
-
-  setGridElementContent: function(gridElement, content) {
-    gridElement.textContent = content
-  },
-
-  openCoverEffect: function(gridCell, gridElement) {
-    gridCell.classList.add("triggerOpenCoverEffect");
-    
-    var triggerDiv = document.createElement("div")
-    triggerDiv.classList.add("triggerOpenCoverEffect");
 
 
-    var dummyDiv = document.createElement("div")
-    dummyDiv.style.backgroundColor = "pink"
-    dummyDiv.style.height = "100px"
-    dummyDiv.style.width = "100px"
-    dummyDiv.classList.add("openCoverEffect");
-    gridElement.append(dummyDiv)
 
-
-    gridElement.style.height = "500px"
-    gridElement.style.width = "500px"
-
-    //gridElement.appendChild(dummyDiv)
-    console.log("height: ", gridElement.style.height)
-    console.log("width: ", gridElement.style.width)
-  },
 
 
   selectMode: function () { // select whether to be in debug mode or creative mode
@@ -298,79 +243,6 @@ ContaineD.prototype = { // prototype just declares functions
     HTMLDivTag.append(viewCSSButton)
     return target
   },
-
-  // creative mode.
-  gridMaker: function(numContainers, columnSpacing, rowSpacing, repeatColumns = [], hasMinColumnSize = 0, hasMinRowSize = 0, gridColumnGap=0, gridRowGap=0) { // takes in: number of containers (num), spacing btw columns (array), rowSpacing (array), whether row sizes should have a min value (initially 0)
-    // create a grid with numContainers amount of containers. You can also allocate the grid into columns, and the sizes of the columns can be listed
-    // in an array and passed in as columnSpacing. The number of columns is the length of the array columnSpacing. Similarly for rowSpacing. hasMinRowSize is
-    // default 0, this argument lets you set a minimum row size and allow elements in the grid to grow to any size based on its contents. If rowSpacing is passed in,
-    // hasMinRowSize will override it. gridcolumnGap is the amount of spacing between columns (int), default is set to 0. Similarly for gridRowGap.
-
-    console.log("in grid mode")
-    // tell the user to drop this HTML in their code, then tell them to call this function.
-    const containeDDiv = document.getElementById("containeD")
-    containeDDiv.style.display = "grid"
-
-    if (hasMinColumnSize > 0) { // hasMinColumnSize overrides columnSpacing
-      console.log("repeatColumns: ", repeatColumns)
-      if (repeatColumns.length > 0) { 
-        containeDDiv.style.gridTemplateColumns = `repeat(${repeatColumns[0]}, ${repeatColumns[1]}px)`
-      }
-      console.log("hasMinColumnSize: ", hasMinColumnSize)
-      containeDDiv.style.gridAutoColumns = `minmax(${hasMinColumnSize}, auto)`
-    }
-    else if (repeatColumns.length == 0) { // repeatColumns overrides columnSpacing 
-      var s = ""
-      for (var i = 0; i < columnSpacing.length; i++) { 
-        if (i == (columnSpacing.length - 1)) {
-          s += columnSpacing[i] + "px" 
-        }
-        else {
-          s += columnSpacing[i] + "px "
-        }
-      }
-      containeDDiv.style.gridTemplateColumns = s
-    }
-    else if (repeatColumns.length > 0) {
-      containeDDiv.style.gridTemplateColumns = `repeat(${repeatColumns[0]}, ${repeatColumns[1]}px)`
-    }
-    
-
-    if (hasMinRowSize > 0) {
-      containeDDiv.style.gridAutoRows = `minmax(${hasMinRowSize}, auto)`
-    }
-    else {
-      var s = ""
-      for (var i = 0; i < rowSpacing.length; i++) { 
-        if (i == rowSpacing.length - 1) {
-          s += rowSpacing[i] + "px" 
-        }
-        else {
-          s += rowSpacing[i] + "px "
-        }
-      }
-      console.log("R: ", s)
-      containeDDiv.style.gridTemplateRows = s
-    }
-
-    containeDDiv.style.gridColumnGap = gridColumnGap + "px"
-    containeDDiv.style.gridRowGap = gridRowGap + "px"
-
-
-    // for (var i = 1; i <= numContainers; i++) {
-    //   const gridContainer = document.createElement("div") // create a div container
-    //   gridContainer.style.wordWrap = "break-word"
-    //   gridContainer.id = "grid-item grid-item-" + i 
-    //   gridContainer.textContent = "Grid-Item " + i + "hehehehe Lorem50 xdaouighv iasdjhjk asihdba ksjdsdjhvgjhvagj "
-    //   gridContainer.style.border = "solid black 1px"
-    //   containeDDiv.append(gridContainer)
-    //   console.log("i: ", i)
-    // }
-
-
-
-  }
-
 
 }
 

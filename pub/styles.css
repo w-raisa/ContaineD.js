@@ -13,3 +13,13 @@
 	margin: 90px;
 }
 
+
+
+.containeD-trigger-single-card {
+	width: 220px;
+	height: 300px;
+	/*border: 1px solid #fff;*/
+	margin-left: 11px;
+	margin-top: 500px;
+	position: absolute;
+}
