@@ -1,43 +1,33 @@
 var gridElement = document.getElementById("containeD")
 //gridElement.style.margin = "90px"
-
-var containeD = new ContaineD(gridElement, {
-	numContainers: 5,
-	containerSize: [500, 500],
-	columnSpacing: [100, 200],
-	rowSpacing: [100, 100],
-	repeatColumns: [3, 100],
-	minColumnSize: 100,
-	hasMinRowSize:  0,
-	gridColumnGap: 20,
-	gridRowGap: 20,
-	isCentered: true, // default false
-})
+var triggerBox = document.querySelector(".containeD-trigger")
+var triggerBoxes = document.querySelectorAll(".containeD-trigger")
+var containeD = new ContaineD(triggerBoxes)
 
 // do the following to get all triggers to have to same animation for their individual cards.
-var triggerBox = document.querySelector(".containeD-trigger")
+//var triggerBox = document.querySelector(".containeD-trigger")
 var cardBox1 = document.querySelector(".containeD-box1")
 var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
-containeD.translatingCards(triggerBox, cardBox1, 300, 200, 200, 0, 0, 20)
-containeD.translatingCards(triggerBox, cardBox2, 400, 100, 200, 0, 0, 20)
-containeD.translatingCards(triggerBox, cardBox3, 600, 0, 200, 0, 0, 20)
-containeD.translatingCards(triggerBox, cardBox4, 800, -100, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox1, 300, "ease-in-out", 200, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox2, 900, "cubic-bezier(1,-1.02,.13,.87)", 100, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox3, 600, "ease-in-out", 0, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -100, 200, 0, 0, 20)
 
 
 // do the following to individually change the animation of cards of a single trigger, developer using this library must provide ids to the cards and the trigger.
 // here we are changing the 1st card and the 4th card of trigger3.
 var chosenTriggerBox = document.getElementById('containeD-trigger3');
 var card1 = document.getElementById('containeD-box1-id');
-containeD.translateCard(chosenTriggerBox, card1, 100, -100, 200, 50, 50, 180)
+containeD.translateCard(chosenTriggerBox, card1, "linear", 100, -100, 200, 0, 0, 180)
 var card4 = document.getElementById('containeD-box4-id');
-containeD.translateCard(chosenTriggerBox, card4, 400, 200, 200, 50, 50, 180)
+containeD.translateCard(chosenTriggerBox, card4, "linear", 400, 200, 200, 0, 0, 180)
 
 // changing the first card of trigger 2 only.
 var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
 var card5 = document.getElementById('hehexd');
-containeD.translateCard(chosenTriggerBox2, card5, 400, 0, 200, 50, 50, 180)
+containeD.translateCard(chosenTriggerBox2, card5, "linear", 400, 0, 200, 0, 0, 180)
 
 
 

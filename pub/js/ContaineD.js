@@ -1,49 +1,21 @@
-function ContaineD(gridElement, options) {
-  //gridElement.style.display = "grid"
-  //gridElement.style.justifyItems = "start"
+function ContaineD(triggerBoxes) {
   this.domTree = document.getElementById("element-in-hierarchy")
-  // if((options.hasOwnProperty('numContainers')) & (options.hasOwnProperty('containerSize'))) { // initializes the actual containers/ squares in the grid
-  //   this.createGrid(gridElement, options.numContainers, options.containerSize)
+  // if (options.hasOwnProperty('speed')) { 
+  //   this.speed = options.speed
   // }
-
-  // if(options.hasOwnProperty('gridColumnGap')){
-  //   this.applyColumnGap(gridElement, options.gridColumnGap) 
-  // }
-  // if(options.hasOwnProperty('gridRowGap')){
-  //   this.applyRowGap(gridElement, options.gridRowGap) 
-  // }
-  // if(options.hasOwnProperty('isCentered')){
-  //   if (options.isCentered) {
-  //     this.applyCentered(gridElement) 
-  //   }
-  // }
-
-  // if ((options.hasOwnProperty('columnSpacing'))) { // columnSpacing gets overriden by repeatColumns, and also by minColumnSize
-  //   if (options.hasOwnProperty('repeatColumns')) { // check if there is repeatColumns, if there is, need to apply that instead of columnSpacing and instead of minColumnSize (overrides minColumnSize and columnSpacing)
-  //     this.applyRepeatedColumns(gridElement, options.repeatColumns)
-  //   }
-  //   else if (options.hasOwnProperty('minColumnSize')) { // check if there is minColumnSize, if there is, need to apply that alongside columnSpacing.
-  //     this.applyMinColumnSize(gridElement, options.minColumnSize)
-  //     this.applyColumnSpace(gridElement, options.columnSpacing)
-  //   }
-  //   else if ((!(options.hasOwnProperty('repeatColumns'))) & (!(options.hasOwnProperty('minColumnSize')))) { // if there was no repeatColumns, or hasMinColumnSize, then need to apply columnSpace
-  //     this.applyColumnSpace(gridElement, options.columnSpacing)
-  //   }
-  // }
-
-  // // forget about row spacing rn.
-  // if(options.hasOwnProperty('rowSpacing')){
-  //   if(options.hasOwnProperty('hasMinRowSize')){
-      
-  //   } 
-  // }
-
-
+  var containeD_containeR = document.querySelector(".containeD-containeR")
+  console.log("triggerBoxes: ", triggerBoxes)
+  var order = triggerBoxes.length
+  for (var i = 0; i < (triggerBoxes.length - 1); i++) {
+    triggerBoxes[i].style.zIndex = `${order}`
+    order -= 1
+  }
 }
 
 ContaineD.prototype = { // prototype just declares functions 
 
-  translatingCards: function(triggerBox, cardBox, speed, translateX, translateY, endX, endY, rotationDeg) { // get all triggers to have the same animation over all cards
+  //translatingCards: function(triggerBox, cardBox, speed, translateX, translateY, endX, endY, rotationDeg) { // get all triggers to have the same animation over all cards
+  translatingCards: function(triggerBox, cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg) { // get all triggers to have the same animation over all cards
     //document.body.appendChild(triggerBox)
     var cardBoxClassName = `.${cardBox.className}`
     //triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
@@ -51,11 +23,10 @@ ContaineD.prototype = { // prototype just declares functions
     //var containeD_containeR = document.querySelector(".containeD-containeR")
     //containeD_containeR.appendChild(triggerBox)
 
-    $(cardBoxClassName).css("transition", `transform ${speed}ms ease-in-out`) 
+    $(cardBoxClassName).css("transition", `transform ${speed}ms ${timeFunction}`) 
 
-    $( ".containeD-trigger" ).hover(
+    $(".containeD-trigger").hover(
     function() {
-      //$(this).toggleClass("box")
       $(this).find(cardBoxClassName).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
@@ -65,18 +36,15 @@ ContaineD.prototype = { // prototype just declares functions
     });
   },
 
-  translateCard: function(triggerBox, cardBox, speed, translateX, translateY, endX, endY, rotationDeg) { // change one card's animation of one trigger
+  translateCard: function(triggerBox, cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg) { // change one card's animation of one trigger
     //triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
-
     //var containeD_containeR = document.querySelector(".containeD-containeR")
     //containeD_containeR.appendChild(triggerBox)
 
-    $(`#${cardBox.id}`).css("transition", `transform ${speed}ms ease-in-out`) 
+    $(`#${cardBox.id}`).css("transition", `transform ${speed}ms ${timeFunction}`) 
 
-    //$( ".containeD-trigger" ).hover(
     $(`#${triggerBox.id}`).hover(
     function() {
-      //$(this).toggleClass("box")
       $(this).find(`#${cardBox.id}`).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
