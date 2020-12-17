@@ -36,17 +36,33 @@ containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
 
 var card = document.querySelector(".containeD-dynamic-card")
 var trigger = document.querySelector(".containeD-dynamic-trigger-card")
-var animationSequence = [
+var animationSequence1 = [
 	"20% {height: 100px;}", 
 	"40% {height: 200px;}", 
 	"60% {height: 300px;}", 
 	"80% {height: 325px;}", 
-	"100% {height: 350px;}"
+	"100% {height: 350px;}",
+	"0% {transform: scale(0)}",
+	"100% {transform: scale(1)}",
+	"100% {opacity: 1}",
+	"50% {opacity: 0.2}",
 	]
-//containeD.dynamicRunningCard(trigger, card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, animationSequence, "a")
-//containeD.dynamicPausingCard(trigger, card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, animationSequence, "b")
+var animationSequence2	= [
+	`0% {
+		left: 0; 
+		background: blue;
+	}`,
+	`100% {
+		left: 10%; 
+		background: lightblue;
+	 }`,
+	]
+// containeD.dynamicRunningCard(card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, "alternate", animationSequence1, "a")
+//containeD.dynamicPausingCard(card, "linear", "infinite", 5, "alternate", animationSequence2, "b", trigger)
+// containeD.dynamicCard(card, "ease-in-out", "infinite", 5,"alternate", animationSequence1, "c")
 
-containeD.dynamicCard(card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, animationSequence, "b")
+
+
 
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")

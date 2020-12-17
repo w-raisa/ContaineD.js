@@ -68,9 +68,9 @@ ContaineD.prototype = { // prototype just declares functions
     box.appendChild(cssAnimation);
   },
 
-  dynamicCard: function(card, timeFunction, iterationCount, speed, animationSeq, x) {
+  dynamicCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x) {
     // runs animation without hover
-    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount}`;
+    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`;
     var cssAnimation2 = document.createElement('style')
     cssAnimation2.type = 'text/css'
 
@@ -86,8 +86,9 @@ ContaineD.prototype = { // prototype just declares functions
     card.appendChild(cssAnimation2);
   },
 
-  dynamicRunningCard: function(trigger, card, timeFunction, iterationCount, speed, animationSeq, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
-    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount}`;
+  dynamicRunningCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x, trigger = null) { 
+  // cards are moving, but upon hovering on the card, it will stop moving, it will pause the animation.
+    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`;
     var cssAnimation2 = document.createElement('style')
     cssAnimation2.type = 'text/css'
 
@@ -102,18 +103,30 @@ ContaineD.prototype = { // prototype just declares functions
     cssAnimation2.appendChild(rules2);
     card.appendChild(cssAnimation2);
 
-    $(`.${trigger.className}`).hover(
-    function() {
-      card.style.animationPlayState = "paused"
-    },
-    function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-      card.style.animationPlayState = "running"
-    });
+    if (trigger===null) {
+      $(`.${card.className}`).hover(
+        function() {
+          card.style.animationPlayState = "paused"
+        },
+        function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+          card.style.animationPlayState = "running"
+      });  
+    }
+    else {
+      $(`.${trigger.className}`).hover(
+      function() {
+        card.style.animationPlayState = "paused"
+      },
+      function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+        card.style.animationPlayState = "running"
+      });
+    }
   },
 
 
-  dynamicPausingCard: function(trigger, card, timeFunction, iterationCount, speed, animationSeq, x) { // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
-    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} paused`;
+  dynamicPausingCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x, trigger = null) { 
+    // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
+    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} paused`;
     var cssAnimation2 = document.createElement('style')
     cssAnimation2.type = 'text/css'
     var animationSeqStr = `@-webkit-keyframes ${x} {`;
@@ -127,15 +140,27 @@ ContaineD.prototype = { // prototype just declares functions
     cssAnimation2.appendChild(rules2);
     card.appendChild(cssAnimation2);
 
-    $(`.${trigger.className}`).hover(
-    function() {
-      card.style.animationPlayState = "running"
-    },
-    function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-      card.style.animationPlayState = "paused"
-    });
+    if (trigger === null) {
+      $(`.${card.className}`).hover(
+        function() {
+          card.style.animationPlayState = "running"
+        },
+        function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+          card.style.animationPlayState = "paused"
+        });
+    }
+    else {
+      $(`.${trigger.className}`).hover(
+        function() {
+          card.style.animationPlayState = "running"
+        },
+        function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+          card.style.animationPlayState = "paused"
+        });
+    }
 
   },
+
 
 
 
