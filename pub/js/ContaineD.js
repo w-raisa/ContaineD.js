@@ -2,46 +2,69 @@ function ContaineD(gridElement, options) {
   //gridElement.style.display = "grid"
   //gridElement.style.justifyItems = "start"
   this.domTree = document.getElementById("element-in-hierarchy")
-  if((options.hasOwnProperty('numContainers')) & (options.hasOwnProperty('containerSize'))) { // initializes the actual containers/ squares in the grid
-    this.createGrid(gridElement, options.numContainers, options.containerSize)
-  }
+  // if((options.hasOwnProperty('numContainers')) & (options.hasOwnProperty('containerSize'))) { // initializes the actual containers/ squares in the grid
+  //   this.createGrid(gridElement, options.numContainers, options.containerSize)
+  // }
 
-  if(options.hasOwnProperty('gridColumnGap')){
-    this.applyColumnGap(gridElement, options.gridColumnGap) 
-  }
-  if(options.hasOwnProperty('gridRowGap')){
-    this.applyRowGap(gridElement, options.gridRowGap) 
-  }
-  if(options.hasOwnProperty('isCentered')){
-    if (options.isCentered) {
-      this.applyCentered(gridElement) 
-    }
-  }
+  // if(options.hasOwnProperty('gridColumnGap')){
+  //   this.applyColumnGap(gridElement, options.gridColumnGap) 
+  // }
+  // if(options.hasOwnProperty('gridRowGap')){
+  //   this.applyRowGap(gridElement, options.gridRowGap) 
+  // }
+  // if(options.hasOwnProperty('isCentered')){
+  //   if (options.isCentered) {
+  //     this.applyCentered(gridElement) 
+  //   }
+  // }
 
-  if ((options.hasOwnProperty('columnSpacing'))) { // columnSpacing gets overriden by repeatColumns, and also by minColumnSize
-    if (options.hasOwnProperty('repeatColumns')) { // check if there is repeatColumns, if there is, need to apply that instead of columnSpacing and instead of minColumnSize (overrides minColumnSize and columnSpacing)
-      this.applyRepeatedColumns(gridElement, options.repeatColumns)
-    }
-    else if (options.hasOwnProperty('minColumnSize')) { // check if there is minColumnSize, if there is, need to apply that alongside columnSpacing.
-      this.applyMinColumnSize(gridElement, options.minColumnSize)
-      this.applyColumnSpace(gridElement, options.columnSpacing)
-    }
-    else if ((!(options.hasOwnProperty('repeatColumns'))) & (!(options.hasOwnProperty('minColumnSize')))) { // if there was no repeatColumns, or hasMinColumnSize, then need to apply columnSpace
-      this.applyColumnSpace(gridElement, options.columnSpacing)
-    }
-  }
+  // if ((options.hasOwnProperty('columnSpacing'))) { // columnSpacing gets overriden by repeatColumns, and also by minColumnSize
+  //   if (options.hasOwnProperty('repeatColumns')) { // check if there is repeatColumns, if there is, need to apply that instead of columnSpacing and instead of minColumnSize (overrides minColumnSize and columnSpacing)
+  //     this.applyRepeatedColumns(gridElement, options.repeatColumns)
+  //   }
+  //   else if (options.hasOwnProperty('minColumnSize')) { // check if there is minColumnSize, if there is, need to apply that alongside columnSpacing.
+  //     this.applyMinColumnSize(gridElement, options.minColumnSize)
+  //     this.applyColumnSpace(gridElement, options.columnSpacing)
+  //   }
+  //   else if ((!(options.hasOwnProperty('repeatColumns'))) & (!(options.hasOwnProperty('minColumnSize')))) { // if there was no repeatColumns, or hasMinColumnSize, then need to apply columnSpace
+  //     this.applyColumnSpace(gridElement, options.columnSpacing)
+  //   }
+  // }
 
-  // forget about row spacing rn.
-  if(options.hasOwnProperty('rowSpacing')){
-    if(options.hasOwnProperty('hasMinRowSize')){
+  // // forget about row spacing rn.
+  // if(options.hasOwnProperty('rowSpacing')){
+  //   if(options.hasOwnProperty('hasMinRowSize')){
       
-    } 
-  }
+  //   } 
+  // }
 
 
 }
 
 ContaineD.prototype = { // prototype just declares functions 
+
+  translatingCards: function(triggerBox, cardBox, speed, translateX, translateY, rotationDeg) {
+    //document.body.appendChild(triggerBox)
+    var cardBoxClassName = `.${cardBox.className}`
+    triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
+
+    var containeD_containeR = document.querySelector(".containeD-containeR")
+    containeD_containeR.appendChild(triggerBox)
+
+    $(cardBoxClassName).css("transition", `transform ${speed}ms ease-in-out`) 
+
+    $( ".containeD-trigger" ).hover(
+    function() {
+      //$(this).toggleClass("box")
+      $(this).find(cardBoxClassName).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
+    },
+    function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+      $(this).find(cardBoxClassName).css("transform", "translate(0px, 0px)")
+      // $( this ).fadeOut( 100 );
+      // $( this ).fadeIn( 200 );
+    });
+  },
+
 
   createGrid: function(gridElement, numContainers, containerSize) {
     for (var i = 1; i <= numContainers; i++) {
