@@ -30,7 +30,17 @@ containeD.translatingCards(triggerBox, cardBox4, 800, -100, 200, 20)
 // here we are changing card1 of 
 var chosenTriggerBox = document.getElementById('containeD-trigger3');
 var card1 = document.getElementById('containeD-box1-id');
-containeD.translateCard(chosenTriggerBox, card1, 100, -100, 200, 360)
+containeD.translateCard(chosenTriggerBox, card1, 100, -100, 200, 180)
+var card2 = document.getElementById('containeD-box2-id');
+containeD.translateCard(chosenTriggerBox, card2, 400, 0, 200, 180)
+var card3 = document.getElementById('containeD-box3-id');
+containeD.translateCard(chosenTriggerBox, card3, 400, 100, 200, 180)
+var card4 = document.getElementById('containeD-box4-id');
+containeD.translateCard(chosenTriggerBox, card4, 400, 200, 200, 180)
+
+var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
+var card5 = document.getElementById('hehexd');
+containeD.translateCard(chosenTriggerBox2, card5, 400, 0, 200, 180)
 
 
 
