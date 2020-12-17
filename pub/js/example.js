@@ -36,28 +36,17 @@ containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
 
 var card = document.querySelector(".containeD-dynamic-card")
 var trigger = document.querySelector(".containeD-dynamic-trigger-card")
-var animationSequence1 = [
-	"20% {height: 100px;}", 
-	"40% {height: 200px;}", 
-	"60% {height: 300px;}", 
-	"80% {height: 325px;}", 
-	"100% {height: 350px;}",
-	"0% {transform: scale(0)}",
-	"100% {transform: scale(1)}",
-	"100% {opacity: 1}",
-	"50% {opacity: 0}",
-	]
-// var animationSequence2	= [
-// 	`0% {
-// 		left: 0; 
-// 		background: blue;
-// 	}`,
-// 	`100% {
-// 		left: 10%; 
-// 		background: lightblue;
-// 	 }`,
+// var animationSequence1 = [
+// 	"20% {height: 100px;}", 
+// 	"40% {height: 200px;}", 
+// 	"60% {height: 300px;}", 
+// 	"80% {height: 325px;}", 
+// 	"100% {height: 350px;}",
+// 	"0% {transform: scale(0)}",
+// 	"100% {transform: scale(1)}",
+// 	"100% {opacity: 1}",
+// 	"50% {opacity: 0}",
 // 	]
-
 var animationSequence2 = {
 	"0%": {
 		"left": "0", 
@@ -68,7 +57,7 @@ var animationSequence2 = {
 		"background": "lightblue",
 		},
 }
-containeD.dynamicPausableCard(trigger, "ease-in-out", "infinite", 5, "alternate", "paused", animationSequence2, "b")
+containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 5, "alternate", "paused", animationSequence2, "b", card) // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
 // containeD.dynamicCard(trigger, "ease-in-out", "infinite", 1,"alternate", animationSequence2, "c")
 
 

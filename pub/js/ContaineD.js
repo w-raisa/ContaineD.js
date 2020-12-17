@@ -16,40 +16,26 @@ ContaineD.prototype = { // prototype just declares functions
 
   //translatingCards: function(triggerBox, cardBox, speed, translateX, translateY, endX, endY, rotationDeg) { // get all triggers to have the same animation over all cards
   translatingCards: function(triggerBox, cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg) { // get all triggers to have the same animation over all cards
-    //document.body.appendChild(triggerBox)
-    var cardBoxClassName = `.${cardBox.className}`
-    //triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
-
-    //var containeD_containeR = document.querySelector(".containeD-containeR")
-    //containeD_containeR.appendChild(triggerBox)
-
-    $(cardBoxClassName).css("transition", `transform ${speed}ms ${timeFunction}`) 
-
+    $(`.${cardBox.className}`).css("transition", `transform ${speed}ms ${timeFunction}`) 
     $(".containeD-trigger").hover(
     function() {
-      $(this).find(cardBoxClassName).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
+      $(this).find(`.${cardBox.className}`).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-      $(this).find(cardBoxClassName).css("transform", `translate(${endX}px, ${endY}px)`)
+      $(this).find(`.${cardBox.className}`).css("transform", `translate(${endX}px, ${endY}px)`)
       // $( this ).fadeOut( 100 );
       // $( this ).fadeIn( 200 );
     });
   },
 
   translateCard: function(triggerBox, cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg) { // change one card's animation of one trigger
-    //triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
-    //var containeD_containeR = document.querySelector(".containeD-containeR")
-    //containeD_containeR.appendChild(triggerBox)
     $(`#${cardBox.id}`).css("transition", `transform ${speed}ms ${timeFunction}`) 
-
     $(`#${triggerBox.id}`).hover(
     function() {
       $(this).find(`#${cardBox.id}`).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
       $(this).find(`#${cardBox.id}`).css("transform", `translate(${endX}px, ${endY}px)`)
-      // $( this ).fadeOut( 100 );
-      // $( this ).fadeIn( 200 );
     });
   },
 
@@ -70,14 +56,16 @@ ContaineD.prototype = { // prototype just declares functions
 
   dynamicCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x) {
     // runs animation without hover
-    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`;
+    //card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`;
+    $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`) 
     this.formatWebKitAnimationStr(x, animationSeq)
   },
 
 
-  dynamicPausableCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationPlayState, animationSeq, x, trigger = null) { 
+  dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationPlayState, animationSeq, x, trigger = null) { 
     // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
-    card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`;
+    //card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`;
+    $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
     this.formatWebKitAnimationStr(x, animationSeq)
 
     var onHoverPlayState = "paused" // if animationPlayState is not paused, then the animationPlayState = "running", so on hover, we would want to pause.
@@ -88,19 +76,24 @@ ContaineD.prototype = { // prototype just declares functions
     if (trigger === null) {
       $(`.${card.className}`).hover(
         function() {
-          card.style.animationPlayState = onHoverPlayState
+          //card.style.animationPlayState = onHoverPlayState
+          $(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${onHoverPlayState}`)
         },
         function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-          card.style.animationPlayState = `${animationPlayState}` //"paused"
+          //card.style.animationPlayState = `${animationPlayState}` //"paused"
+          $(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${animationPlayState}`)
         });
     }
     else {
       $(`.${trigger.className}`).hover(
+      //$(`.containeD-dynamic-trigger-card`).hover(
         function() {
-          card.style.animationPlayState = onHoverPlayState
+          //card.style.animationPlayState = onHoverPlayState
+          $(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${onHoverPlayState}`)
         },
         function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-          card.style.animationPlayState = `${animationPlayState}`
+          //card.style.animationPlayState = `${animationPlayState}`
+          $(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${animationPlayState}`)
         });
     }
 
