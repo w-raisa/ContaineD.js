@@ -62,43 +62,44 @@ ContaineD.prototype = { // prototype just declares functions
     this.formatWebKitAnimationStr(x, animationSeq)
   },
 
-
-  dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationPlayState, animationSeq, x, trigger = null) { 
-    //use this to get all cards to have this animation. no card will have a unique animation if using this. all cards will have the same animation
-    // cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause
-    //card.style.animation = `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`;
-    $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+  dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationPlayState, animationSeq, x) { 
+    /* 
+    use this to get all cards to have this animation. no card will have a unique animation if using this. all cards will have the same animation
+    cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause 
+    */
     this.formatWebKitAnimationStr(x, animationSeq)
+  
+    $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
 
+    this.hoverHandler(`.${card.className}`, animationPlayState)
+  },
+
+
+  dynamicPausableCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationPlayState, animationSeq, x) { 
+    /* 
+    use this to get one card to have this animation. no other card will have this animation if using this. all cards other will have a different animation.
+    cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause 
+    */
+    this.formatWebKitAnimationStr(x, animationSeq)
+    $(`#${card.id}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+    this.hoverHandler(`#${card.id}`, animationPlayState)
+  },
+
+  hoverHandler: function(cardSelector, animationPlayState) {
     var onHoverPlayState = "paused" // if animationPlayState is not paused, then the animationPlayState = "running", so on hover, we would want to pause.
     if (animationPlayState === "paused") {
       onHoverPlayState = "running"
     }
 
-    if (trigger === null) {
-      $(`.${card.className}`).hover(
-        function() {
-          //$(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${onHoverPlayState}`) // do this if you want ALL cards to be affected
-          $(this).css("animationPlayState", `${onHoverPlayState}`) // do this if you want a this single card to be affected
-        },
-        function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-          //$(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${animationPlayState}`) // do this if you want ALL cards to be affected
-          $(this).css("animationPlayState", `${animationPlayState}`) // do this if you want a this single card to be affected
-        });
-    }
-    else {
-      $(`.${trigger.className}`).hover(
-      //$(`.containeD-dynamic-trigger-card`).hover(
-        function() {
-          $(this).css("animationPlayState", `${onHoverPlayState}`)
-          //$(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${onHoverPlayState}`)
-        },
-        function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-          //$(".containeD-containeR").find(`.${card.className}`).css("animationPlayState", `${animationPlayState}`)
-          $(this).css("animationPlayState", `${animationPlayState}`)
-        });
-    }
-
+    $(`${cardSelector}`).hover(
+      function() {
+        //$(".containeD-containeR").find(`.${cardSelector}`).css("animationPlayState", `${onHoverPlayState}`) // do this if you want ALL cards to be affected
+        $(this).css("animationPlayState", `${onHoverPlayState}`) // do this if you want a this single card to be affected
+      },
+      function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
+        //$(".containeD-containeR").find(`.${cardSelector}`).css("animationPlayState", `${animationPlayState}`) // do this if you want ALL cards to be affected
+        $(this).css("animationPlayState", `${animationPlayState}`) // do this if you want a this single card to be affected
+      });
   },
 
 
@@ -121,13 +122,6 @@ ContaineD.prototype = { // prototype just declares functions
     cssAnimation2.appendChild(rules2);
     card.appendChild(cssAnimation2);
   },
-
-
-
-
-
-
-
 
 
 
