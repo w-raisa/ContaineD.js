@@ -40,7 +40,6 @@ ContaineD.prototype = { // prototype just declares functions
     //triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
     //var containeD_containeR = document.querySelector(".containeD-containeR")
     //containeD_containeR.appendChild(triggerBox)
-
     $(`#${cardBox.id}`).css("transition", `transform ${speed}ms ${timeFunction}`) 
 
     $(`#${triggerBox.id}`).hover(
@@ -53,6 +52,38 @@ ContaineD.prototype = { // prototype just declares functions
       // $( this ).fadeIn( 200 );
     });
   },
+
+  cardBackgroundColourTransition: function(cardBox, startingColour, endingColour, speed, x) {
+    cardBox.style.animation = `${x} ${speed}s infinite`;
+    var cssAnimation = document.createElement('style')
+    cssAnimation.type = 'text/css'
+    var rules = document.createTextNode(
+      `@-webkit-keyframes ${x} {` +
+      `0% { background-color: ${startingColour}; }` +
+      `50% { background-color: ${endingColour}; }` +
+      `100% { background-color: ${startingColour}; }` +
+      "}"
+      );
+    cssAnimation.appendChild(rules);
+    triggerBox.appendChild(cssAnimation);
+  },
+
+  trBackgroundColourTransition: function(triggerBox, startingColour, endingColour, speed, x) {
+    triggerBox.style.animation = `${x} ${speed}s infinite`;
+    var cssAnimation = document.createElement('style')
+    cssAnimation.type = 'text/css'
+    var rules = document.createTextNode(
+      `@-webkit-keyframes ${x} {` +
+      `0% { background-color: ${startingColour}; }` +
+      `50% { background-color: ${endingColour}; }` +
+      `100% { background-color: ${startingColour}; }` +
+      "}"
+      );
+    cssAnimation.appendChild(rules);
+    triggerBox.appendChild(cssAnimation);
+  },
+
+
 
 
 
@@ -124,22 +155,6 @@ ContaineD.prototype = { // prototype just declares functions
 
   setGridElementContent: function(gridElement, content) {
     gridElement.textContent = content
-  },
-
-  backgroundColourTransitionEffect: function(gridCell, startingColour, endingColour, speed, x) {
-    //gridCell.style.backgroundColor = `${startingColour}`
-    gridCell.style.animation = `${x} ${speed}s infinite`;
-    var cssAnimation = document.createElement('style')
-    cssAnimation.type = 'text/css'
-    var rules = document.createTextNode(
-      `@-webkit-keyframes ${x} {` +
-      `0% { background-color: ${startingColour}; }` +
-      `50% { background-color: ${endingColour}; }` +
-      `100% { background-color: ${startingColour}; }` +
-      "}"
-      );
-    cssAnimation.appendChild(rules);
-    gridCell.appendChild(cssAnimation);
   },
 
   openCoverEffect: function(gridCell, gridElement) {
