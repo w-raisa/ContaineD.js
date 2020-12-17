@@ -43,7 +43,7 @@ function ContaineD(gridElement, options) {
 
 ContaineD.prototype = { // prototype just declares functions 
 
-  translatingCards: function(triggerBox, cardBox, speed, translateX, translateY, rotationDeg) { // get all triggers to have the same animation over all cards
+  translatingCards: function(triggerBox, cardBox, speed, translateX, translateY, endX, endY, rotationDeg) { // get all triggers to have the same animation over all cards
     //document.body.appendChild(triggerBox)
     var cardBoxClassName = `.${cardBox.className}`
     //triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
@@ -59,13 +59,13 @@ ContaineD.prototype = { // prototype just declares functions
       $(this).find(cardBoxClassName).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-      $(this).find(cardBoxClassName).css("transform", "translate(0px, 0px)")
+      $(this).find(cardBoxClassName).css("transform", `translate(${endX}px, ${endY}px)`)
       // $( this ).fadeOut( 100 );
       // $( this ).fadeIn( 200 );
     });
   },
 
-  translateCard: function(triggerBox, cardBox, speed, translateX, translateY, rotationDeg) { // change one card's animation of one trigger
+  translateCard: function(triggerBox, cardBox, speed, translateX, translateY, endX, endY, rotationDeg) { // change one card's animation of one trigger
     //triggerBox.appendChild(cardBox) // the first one appended appears at the bottom of the deck. last one appended is at the top of the deck. the last one appended will overlap all.
 
     //var containeD_containeR = document.querySelector(".containeD-containeR")
@@ -80,7 +80,7 @@ ContaineD.prototype = { // prototype just declares functions
       $(this).find(`#${cardBox.id}`).css("transform", `translate(${translateX}px, ${translateY}px) rotate(${rotationDeg}deg)`)
     },
     function() { // this gets triggered when we are no longer hovering on elements with class .containeD-trigger 
-      $(this).find(`#${cardBox.id}`).css("transform", "translate(0px, 0px)")
+      $(this).find(`#${cardBox.id}`).css("transform", `translate(${endX}px, ${endY}px)`)
       // $( this ).fadeOut( 100 );
       // $( this ).fadeIn( 200 );
     });

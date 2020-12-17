@@ -20,27 +20,24 @@ var cardBox1 = document.querySelector(".containeD-box1")
 var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
-containeD.translatingCards(triggerBox, cardBox1, 300, 200, 200, 20)
-containeD.translatingCards(triggerBox, cardBox2, 400, 100, 200, 20)
-containeD.translatingCards(triggerBox, cardBox3, 600, 0, 200, 20)
-containeD.translatingCards(triggerBox, cardBox4, 800, -100, 200, 20)
+containeD.translatingCards(triggerBox, cardBox1, 300, 200, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox2, 400, 100, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox3, 600, 0, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox4, 800, -100, 200, 0, 0, 20)
 
 
-// do the following to change one card's animation of one trigger, developer using this library must provide ids.
-// here we are changing card1 of 
+// do the following to individually change the animation of cards of a single trigger, developer using this library must provide ids to the cards and the trigger.
+// here we are changing the 1st card and the 4th card of trigger3.
 var chosenTriggerBox = document.getElementById('containeD-trigger3');
 var card1 = document.getElementById('containeD-box1-id');
-containeD.translateCard(chosenTriggerBox, card1, 100, -100, 200, 180)
-var card2 = document.getElementById('containeD-box2-id');
-containeD.translateCard(chosenTriggerBox, card2, 400, 0, 200, 180)
-var card3 = document.getElementById('containeD-box3-id');
-containeD.translateCard(chosenTriggerBox, card3, 400, 100, 200, 180)
+containeD.translateCard(chosenTriggerBox, card1, 100, -100, 200, 50, 50, 180)
 var card4 = document.getElementById('containeD-box4-id');
-containeD.translateCard(chosenTriggerBox, card4, 400, 200, 200, 180)
+containeD.translateCard(chosenTriggerBox, card4, 400, 200, 200, 50, 50, 180)
 
+// changing the first card of trigger 2 only.
 var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
 var card5 = document.getElementById('hehexd');
-containeD.translateCard(chosenTriggerBox2, card5, 400, 0, 200, 180)
+containeD.translateCard(chosenTriggerBox2, card5, 400, 0, 200, 50, 50, 180)
 
 
 
