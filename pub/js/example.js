@@ -61,16 +61,15 @@ var animationSequence1 = [
 var animationSequence2 = {
 	"0%": {
 		"left": "0", 
-		"background": "blue",
+		"background": "red",
 		},
 	"100%": {
 		"left": "10%", 
 		"background": "lightblue",
 		},
 }
-// containeD.dynamicRunningCard(card, "cubic-bezier(1,-1.02,.13,.87)", "infinite", 5, "alternate", animationSequence1, "a")
-//containeD.dynamicPausingCard(card, "linear", "infinite", 5, "alternate", animationSequence1, "b", trigger)
-containeD.dynamicCard(trigger, "ease-in-out", "infinite", 1,"alternate", animationSequence2, "c")
+containeD.dynamicPausableCard(trigger, "ease-in-out", "infinite", 5, "alternate", "paused", animationSequence2, "b")
+// containeD.dynamicCard(trigger, "ease-in-out", "infinite", 1,"alternate", animationSequence2, "c")
 
 
 
