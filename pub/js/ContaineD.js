@@ -61,6 +61,7 @@ ContaineD.prototype = { // prototype just declares functions
     */
     this.formatWebKitAnimationStr(x, animationSeq)
     if (animationPlayState === null) {
+      $(`.${card.className}`).off("mouseleave mouseenter") // need to take off any hover event from this card.
       $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`) 
       return
     }
@@ -72,13 +73,20 @@ ContaineD.prototype = { // prototype just declares functions
   },
 
 
-  dynamicPausableCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationPlayState, animationSeq, x) { 
+  dynamicPausableCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x, animationPlayState=null) { 
     /* 
     use this to get one card to have this animation. no other card will have this animation if using this. all cards other will have a different animation.
     cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause 
     */
     this.formatWebKitAnimationStr(x, animationSeq)
-    $(`#${card.id}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+    if (animationPlayState === null) {
+      $(`#${card.id}`).off("mouseleave mouseenter") // need to take off any hover event from this card.
+      $(`#${card.id}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
+      return
+    }
+    else {
+      $(`#${card.id}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+    }
     this.hoverHandler(`#${card.id}`, animationPlayState)
   },
 
@@ -86,6 +94,9 @@ ContaineD.prototype = { // prototype just declares functions
     var onHoverPlayState = "paused" // if animationPlayState is not paused, then the animationPlayState = "running", so on hover, we would want to pause.
     if (animationPlayState === "paused") {
       onHoverPlayState = "running"
+    }
+    if( animationPlayState === null) {
+      return 
     }
 
     console.log("cardSelector: ", cardSelector)

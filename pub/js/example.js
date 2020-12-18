@@ -57,7 +57,7 @@ var animationSequence2 = {
 		"background": "lightblue",
 		},
 }
-containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "b", "paused") // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
+containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "b") // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
 
 var animationSequence3 = {
 	"0%": {
@@ -74,8 +74,8 @@ var animationSequence3 = {
 // change the animation of one single card
 var uniqueDynamicCard = document.getElementById("dynamic-card-id-1")
 var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-1")
-//containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "alternate", "running", animationSequence3, "d")
-//containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", "running", animationSequence3, "e")
+// containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "d")
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "e")
 
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")
