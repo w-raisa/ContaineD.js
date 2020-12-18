@@ -57,12 +57,12 @@ var animationSequence2 = {
 		"background": "lightblue",
 		},
 }
-containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "b") // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
+containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "running") // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
 
 var animationSequence3 = {
 	"0%": {
 		"bottom": "0", 
-		"background": "yellow",
+		"background": "black",
 		"opacity": "0",
 		},
 	"100%": {
@@ -76,8 +76,32 @@ var animationSequence3 = {
 // change the animation of one single card
 var uniqueDynamicCard = document.getElementById("dynamic-card-id-1")
 var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-1")
-containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "d")
-containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "e", "paused")
+containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "paused")
+
+
+//containeD.slideshow()
+var animationSequence4 = {
+	"0%": {
+		"z-index": "1",
+		"opacity": "0",
+		},
+	"25%": {
+		"z-index": "2",
+		"opacity": "1",
+		},
+	"50%": {
+		"z-index": "3",
+	}
+}
+
+
+var slideShowImg1 = document.getElementById("containeD-slideshow-img-id-1")
+var slideShowImg2 = document.getElementById("containeD-slideshow-img-id-2")
+var slideShowImg3 = document.getElementById("containeD-slideshow-img-id-3")
+containeD.dynamicPausableCard(slideShowImg1, "linear", "infinite", 4, 0.5, "normal", animationSequence4)
+containeD.dynamicPausableCard(slideShowImg2, "linear", "infinite", 8, 0.5, "normal", animationSequence4)
+containeD.dynamicPausableCard(slideShowImg3, "linear", "infinite", 12, 0.5, "normal", animationSequence4)
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")
 // //containeD.openCoverEffect(gridElement1, gridElement)

@@ -10,7 +10,10 @@ function ContaineD(triggerBoxes) {
     triggerBoxes[i].style.zIndex = `${order}`
     order -= 1
   }
-  this.clickSlides()
+
+  this.webkitKeyframeNames = []
+  this.createWebkitName(7)
+
 }
 
 ContaineD.prototype = { // prototype just declares functions 
@@ -55,38 +58,45 @@ ContaineD.prototype = { // prototype just declares functions
     box.appendChild(cssAnimation);
   },
 
-  dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x, animationPlayState=null) { 
+  dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, animationPlayState=null) { 
     /* 
     use this to get all cards to have this animation. no card will have a unique animation if using this. all cards will have the same animation
     cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause 
     */
-    this.formatWebKitAnimationStr(x, animationSeq)
+
+    const randomlength = Math.floor((Math.random() * 52) + 1);
+    const webkitName = this.createWebkitName(randomlength)
+
+    this.formatWebKitAnimationStr(webkitName, animationSeq)
     if (animationPlayState === null) {
       $(`.${card.className}`).off("mouseleave mouseenter") // need to take off any hover event from this card.
-      $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`) 
+      $(`.${card.className}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`) 
       return
     }
     else {
-      $(`.${card.className}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+      $(`.${card.className}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
     }
 
     this.hoverHandler(`.${card.className}`, animationPlayState)
   },
 
 
-  dynamicPausableCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, x, animationPlayState=null) { 
+  dynamicPausableCard: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, animationPlayState=null) { 
     /* 
     use this to get one card to have this animation. no other card will have this animation if using this. all cards other will have a different animation.
     cards are moving, but upon hovering/clicking the card, it will stop moving, it will pause 
     */
-    this.formatWebKitAnimationStr(x, animationSeq)
+    const randomlength = Math.floor((Math.random() * 52) + 1);
+    const webkitName = this.createWebkitName(randomlength)
+
+    this.formatWebKitAnimationStr(webkitName, animationSeq)
     if (animationPlayState === null) {
       $(`#${card.id}`).off("mouseleave mouseenter") // need to take off any hover event from this card.
-      $(`#${card.id}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
+      $(`#${card.id}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
       return
     }
     else {
-      $(`#${card.id}`).css("animation", `${x} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
+      $(`#${card.id}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection} ${animationPlayState}`) 
     }
     this.hoverHandler(`#${card.id}`, animationPlayState)
   },
@@ -134,56 +144,22 @@ ContaineD.prototype = { // prototype just declares functions
     card.appendChild(cssAnimation2);
   },
 
-
-  clickSlides: function()  {
-    $(document).ready(function() {
-      var allImages = []
-      var curImg = $(".active")
-      for (var i = 0; i < curImg.length; i++) {
-        allImages.push(curImg[i])
-      }
-      console.log("allImages: ", allImages)
-
-
-      $(".next").on("click", function() {
-        var currentImg = $(".active")
-        var nextImg = currentImg.next(); // grab the next element
-
-        if (nextImg.length) { // testing to see if there is a next image
-          currentImg.removeClass("active").css("z-index", -10) // removing the active class, setting z-index to -10 to put this image underneath
-          nextImg.addClass("active").css("z-index", 10)     
-        }
-        else {
-          var prevImg = currentImg.prev()
-          for (var i = 0; i < 4; i++) {
-            prevImg.addClass("active").css("z-index", 10)
-            prevImg = prevImg.prev()
-          }
-        }
-      })
-
-      $(".prev").on("click", function() {
-        var currentImg = $(".active")
-        var prevImg = currentImg.prev(); // grab the next element
-
-        if (prevImg.length) { // testing to see if there is a previous image
-          currentImg.removeClass("active").css("z-index", -10) // removing the active class, setting z-index to -10 to put this image underneath
-          prevImg.addClass("active").css("z-index", 10)     
-        }
-        if ((currentImg.prev())) {
-          currentImg.removeClass("active").css("z-index", -10)
-          var lastImg = currentImg;
-          for (var i = 0; i < allImages.length - 1; i++) {
-            lastImg = lastImg.next()
-          }
-          lastImg.addClass("active").css("z-index", 10)
-        }
-      })
-    })
+  createWebkitName: function (length) { // got this function from https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript it just generates a random string.
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    console.log(result);
+    if (this.webkitKeyframeNames.includes(result)){
+      this.createWebkitName(length)
+    }
+    else {
+      this.webkitKeyframeNames.push(result)
+    }
+    return result;
   },
-  
-
-
 
 
 
