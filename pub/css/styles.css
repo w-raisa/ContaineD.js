@@ -1,0 +1,25 @@
+#element-in-hierarchy {
+  margin-left: 9px;
+  margin-bottom: 40px;
+}
+
+#userWebsite {
+  margin-left: 9px;
+  border: 1px solid black;
+}
+
+
+.exampleClass3 {
+	margin: 90px;
+}
+
+
+
+.containeD-trigger-single-card {
+	width: 220px;
+	height: 300px;
+	/*border: 1px solid #fff;*/
+	margin-left: 11px;
+	margin-top: 500px;
+	position: absolute;
+}

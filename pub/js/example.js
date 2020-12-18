@@ -49,11 +49,11 @@ var trigger = document.querySelector(".containeD-dynamic-trigger-card")
 // 	]
 var animationSequence2 = {
 	"0%": {
-		"left": "0", 
+		"bottom": "0", 
 		"background": "red",
 		},
 	"100%": {
-		"left": "10%", 
+		"bottom": "10%", 
 		"background": "lightblue",
 		},
 }
@@ -61,12 +61,14 @@ containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 1, "alternate
 
 var animationSequence3 = {
 	"0%": {
-		"left": "0", 
+		"bottom": "0", 
 		"background": "yellow",
+		"opacity": "0",
 		},
 	"100%": {
-		"left": "10%", 
+		"bottom": "10%", 
 		"background": "orange",
+		"opacity": "1",
 		},
 }
 
@@ -74,9 +76,8 @@ var animationSequence3 = {
 // change the animation of one single card
 var uniqueDynamicCard = document.getElementById("dynamic-card-id-1")
 var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-1")
-// containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "d")
-containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "e")
-
+containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "d")
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "e", "paused")
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")
 // //containeD.openCoverEffect(gridElement1, gridElement)

@@ -1,0 +1,72 @@
+#containeD {
+	display: grid;
+}
+
+
+.containeD-containeR {
+	height: 900px;
+	width: 900px;
+	margin: 90px;
+	background-color: blue;
+}
+
+.containeD-trigger {
+	position: relative;
+	z-index: 1;
+
+	width: 200px;
+	height: 200px;
+	border: 10px solid #fff;
+	background: : #ddd;
+	float: left;
+	margin: 10px; 
+}
+
+.containeD-box1, .containeD-box2, .containeD-box3, .containeD-box4 {
+	position: absolute;
+	top: 0;
+    left: 0;
+    overflow: hidden;
+
+	display: inline-block;
+	background: orange;
+	width: 200px;
+	height: 200px;
+	/*transition: transform 300ms ease-in-out;*/
+	border: 1px solid magenta;
+	pointer-events: none; /*pointer-events says: don't register and hovers or clicks on this element. if you move your mouse on the pink box, it will not register that and the box will close.*/
+	/* you put the transition on the box that is looking for a change in the property */
+}
+
+
+.containeD-containeR-dynamic {
+	height: 900px;
+	width: 800px;
+	margin: 90px;
+	background-color: blue;
+}
+
+.containeD-dynamic-trigger-card {
+	width: 240px;
+	height: 367px;
+	border: 1px solid #5f9;
+	margin-left: 11px;
+	margin-top: 11px;
+	position: relative;
+	float: left;
+}
+
+.containeD-dynamic-card {
+	width: 220px;
+	height: 50px;
+	border: 1px solid #5f9;
+	margin: 8px;
+}
+
+img {
+	width: 100%;
+  	height: 100%;
+	justify-content: cover;
+}
+
+
