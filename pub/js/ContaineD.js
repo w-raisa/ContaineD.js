@@ -64,7 +64,7 @@ ContaineD.prototype = { // prototype just declares functions
     const randomlength = Math.floor((Math.random() * 52) + 1);
     const webkitName = this.createWebkitName(randomlength)
 
-    this.formatWebKitAnimationStr(webkitName, animationSeq)
+    this.formatWebKitAnimationStr(webkitName, animationSeq, card)
     if (animationPlayState === null) {
       $(`.${card.className}`).off("mouseleave mouseenter") // need to take off any hover event from this card.
       $(`.${card.className}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`) 
@@ -86,7 +86,7 @@ ContaineD.prototype = { // prototype just declares functions
     const randomlength = Math.floor((Math.random() * 52) + 1);
     const webkitName = this.createWebkitName(randomlength)
 
-    this.formatWebKitAnimationStr(webkitName, animationSeq)
+    this.formatWebKitAnimationStr(webkitName, animationSeq, card)
     if (animationPlayState === null) {
       $(`#${card.id}`).off("mouseleave mouseenter") // need to take off any hover event from this card.
       $(`#${card.id}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
@@ -122,7 +122,7 @@ ContaineD.prototype = { // prototype just declares functions
   slideshow: function(imgNodes, slideshowCard, timeFunction, iterationCount, speed, animationDirection, animationSeq) {
     const randomLength = Math.floor((Math.random() * 52) + 1);
     const webkitName = this.createWebkitName(randomLength)
-    this.formatWebKitAnimationStr(webkitName, animationSeq)
+    this.formatWebKitAnimationStr(webkitName, animationSeq, slideshowCard)
 
     for (var i = 0; i < imgNodes.length; i++) {
       imgNodes[i].style.zIndex = i + 2
@@ -153,7 +153,7 @@ ContaineD.prototype = { // prototype just declares functions
       })
   },
 
-  formatWebKitAnimationStr: function(x, animationSeq) {
+  formatWebKitAnimationStr: function(x, animationSeq, card = null) {
     var cssAnimation2 = document.createElement('style')
     cssAnimation2.type = 'text/css'
     var dummystr = `@-webkit-keyframes ${x} {`;
@@ -169,6 +169,10 @@ ContaineD.prototype = { // prototype just declares functions
     var rules2 = document.createTextNode(dummystr)
 
     cssAnimation2.appendChild(rules2);
+    console.log("card: ", card)
+    if (card === null) {
+      return
+    }
     card.appendChild(cssAnimation2);
   },
 
