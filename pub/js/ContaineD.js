@@ -10,6 +10,7 @@ function ContaineD(triggerBoxes) {
     triggerBoxes[i].style.zIndex = `${order}`
     order -= 1
   }
+  this.clickSlides()
 }
 
 ContaineD.prototype = { // prototype just declares functions 
@@ -134,6 +135,52 @@ ContaineD.prototype = { // prototype just declares functions
   },
 
 
+  clickSlides: function()  {
+    $(document).ready(function() {
+      var allImages = []
+      var curImg = $(".active")
+      for (var i = 0; i < curImg.length; i++) {
+        allImages.push(curImg[i])
+      }
+      console.log("allImages: ", allImages)
+
+
+      $(".next").on("click", function() {
+        var currentImg = $(".active")
+        var nextImg = currentImg.next(); // grab the next element
+
+        if (nextImg.length) { // testing to see if there is a next image
+          currentImg.removeClass("active").css("z-index", -10) // removing the active class, setting z-index to -10 to put this image underneath
+          nextImg.addClass("active").css("z-index", 10)     
+        }
+        else {
+          var prevImg = currentImg.prev()
+          for (var i = 0; i < 4; i++) {
+            prevImg.addClass("active").css("z-index", 10)
+            prevImg = prevImg.prev()
+          }
+        }
+      })
+
+      $(".prev").on("click", function() {
+        var currentImg = $(".active")
+        var prevImg = currentImg.prev(); // grab the next element
+
+        if (prevImg.length) { // testing to see if there is a previous image
+          currentImg.removeClass("active").css("z-index", -10) // removing the active class, setting z-index to -10 to put this image underneath
+          prevImg.addClass("active").css("z-index", 10)     
+        }
+        if ((currentImg.prev())) {
+          currentImg.removeClass("active").css("z-index", -10)
+          var lastImg = currentImg;
+          for (var i = 0; i < allImages.length - 1; i++) {
+            lastImg = lastImg.next()
+          }
+          lastImg.addClass("active").css("z-index", 10)
+        }
+      })
+    })
+  },
   
 
 

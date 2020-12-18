@@ -2,6 +2,12 @@
 	display: grid;
 }
 
+img {
+	width: 100%;
+  	height: 100%;
+	justify-content: cover;
+}
+
 
 .containeD-containeR {
 	height: 900px;
@@ -63,10 +69,82 @@
 	margin: 8px;
 }
 
-img {
+
+.container {
+	width: 900px;
+	/*margin: 40px auto;*/
+	overflow: auto;
+	border: 1px solid black;
+}
+
+.slide-outer {
+	height: 300px;
+	width: 450px;
+	/*margin: 90px;*/
+	border: #000 solid 1px;
+	background-color: black;
+}
+
+.slider-inner {
+	width: 300px;
+	height: 300px;
+	margin: 10px;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	padding: 3px;
+	border: #000 solid 1px;
+}
+
+
+.slider-inner img {
+	display:none; /*want them all hidden at first*/
 	width: 100%;
-  	height: 100%;
-	justify-content: cover;
+	height: 100%;
+}
+
+.slider-inner img.active { /*take an image that has the "active" class and display it as an inline-block*/
+	display: inline-block;
+}
+
+.prev,.next {
+	float:left;
+	margin-top: 130px;
+	cursor: pointer;
+}
+
+.prev {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	margin-left: 45px;
+	margin-top: 330px;
+	z-index: 100;
+}
+
+
+.next {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	margin-left: -70px;
+	margin-top: 330px;
+	z-index: 100;
+}
+
+.slide-image {
+	/*height: 100px;*/
+	/*width: 200px;*/
+	height: 100%;
+	width: 100%;
+
+}
+
+.containeD-slides-card {
+	margin: 100px;
+	height: 400px;
+	width: 327px;
+	border: 1px solid black;
 }
 
 
