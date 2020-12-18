@@ -119,11 +119,10 @@ ContaineD.prototype = { // prototype just declares functions
   },
 
 
-  slideshow: function(imgNodes, slideshowCard, zIndex) {
-    /* give a list of img nodes (developer proves these by using document.querySelector).
-    */
+  slideshow: function(imgNodes, slideshowCard, timeFunction, iterationCount, speed, animationDirection, animationSeq) {
     const randomLength = Math.floor((Math.random() * 52) + 1);
     const webkitName = this.createWebkitName(randomLength)
+    this.formatWebKitAnimationStr(webkitName, animationSeq)
 
     for (var i = 0; i < imgNodes.length; i++) {
       imgNodes[i].style.zIndex = i + 2
@@ -132,10 +131,10 @@ ContaineD.prototype = { // prototype just declares functions
     $(`#${slideshowCard.id}`).click(
       function() {
         console.log('he')
-
+        $(this).css('animation', `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
         for (var i = 0; i < imgNodes.length; i++) {
           $(`#${imgNodes[i].id}`).click (
-            function() {
+            function(i) {
               $(this).css("z-index", 1)
             }
           )

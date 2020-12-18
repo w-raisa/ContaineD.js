@@ -80,13 +80,25 @@ containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "
 containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "paused")
 
 
+var animationSequence4 = {
+	"0%": { 
+		"left": "0",
+		"opacity": "1",
+		},
+	"100%": {
+		"left": "10%",
+		"opacity": "0.5",
+		},
+}
+
+
 var slideshowCard = document.getElementById("containeD-slideshow-card-id-1")
 var imgNode4 = document.getElementById("containeD-slideshow-img-id-4")
 var imgNode3 = document.getElementById("containeD-slideshow-img-id-3")
 var imgNode2 = document.getElementById("containeD-slideshow-img-id-2")
 var imgNode1 = document.getElementById("containeD-slideshow-img-id-1")
 const imgNodes = [imgNode1,imgNode2,imgNode3, imgNode4] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
-containeD.slideshow(imgNodes, slideshowCard, 4)
+containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate", animationSequence4)
 //containeD.slideshow(imgNode2, slideshowCard, 3)
 //containeD.slideshow(imgNode1, slideshowCard, 2)
 
