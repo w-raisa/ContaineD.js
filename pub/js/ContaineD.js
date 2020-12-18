@@ -4,16 +4,13 @@ function ContaineD(triggerBoxes) {
   //   this.speed = options.speed
   // }
   var containeD_containeR = document.querySelector(".containeD-containeR")
-  console.log("triggerBoxes: ", triggerBoxes)
   var order = triggerBoxes.length
   for (var i = 0; i < (triggerBoxes.length - 1); i++) {
     triggerBoxes[i].style.zIndex = `${order}`
     order -= 1
   }
-
+  this.removedSlideshowImageNodes = []
   this.webkitKeyframeNames = []
-  this.createWebkitName(7)
-
 }
 
 ContaineD.prototype = { // prototype just declares functions 
@@ -110,8 +107,6 @@ ContaineD.prototype = { // prototype just declares functions
       return 
     }
 
-    console.log("cardSelector: ", cardSelector)
-
     $(`${cardSelector}`).hover(
       function() {
         //$(".containeD-containeR").find(`.${cardSelector}`).css("animationPlayState", `${onHoverPlayState}`) // do this if you want ALL cards to be affected
@@ -123,6 +118,63 @@ ContaineD.prototype = { // prototype just declares functions
       });
   },
 
+
+  slideshow: function(imgNodes, slideshowCard, zIndex) {
+    /* give a list of img nodes (developer proves these by using document.querySelector).
+    */
+    const randomLength = Math.floor((Math.random() * 52) + 1);
+    const webkitName = this.createWebkitName(randomLength)
+
+    var zIndexToImgNode = {} // key is zIndex, value is the imagenode that has this zIndex
+    for (var i = 0; i < imgNodes.length; i++) {
+      imgNodes[i].style.zIndex = i + 2
+      zIndexToImgNode[i+2] = imgNodes[i]
+    }
+    console.log("zIndexToImgNode: ", zIndexToImgNode)
+
+    //imgNode.style.zIndex = zIndex
+
+    //$(`#${imgNodes[2].id}`).click( 
+    $(`#${slideshowCard.id}`).click(
+      function() {
+        console.log('he')
+
+        for (var i = 0; i < imgNodes.length; i++) {
+          $(`#${imgNodes[i].id}`).click (
+            function() {
+              console.log('heeee')
+              $(this).css("z-index", 1)
+            }
+          )
+        }
+
+
+        //$(`#${imgNode.id}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
+        //$(`#${imgNodes[2].id}`).css("z-index", imgNodes[2].style.zIndex - (imgNodes[2].style.zIndex -1))
+
+
+        // console.log("output: " , $(this).find(`.${imgNodes[0].className}`))
+        // var numImages = $(this).find(`.${imgNodes[0].className}`).length
+        //for (var i = (numImages - 1); i > 0; i--) {
+        //console.log("imgNodes: ", imgNodes[i])
+        //$(this).find(`.${imgNodes[0].className}`).css("z-index", imgNodes[numImages - 1].style.zIndex - (imgNodes[numImages - i].style.zIndex -1))
+        //} 
+        // $(this).find(`.${imgNodes[0].className}`).css("z-index", imgNodes[numImages - 1].style.zIndex - (imgNodes[numImages - 1].style.zIndex -1))
+
+
+        var imgNodesZIndex1 = [] // holds all the images with zIndex = 1
+        for (var i = 0; i < imgNodes.length; i++) {
+          if (imgNodes[i].style.zIndex == 1) {
+            imgNodesZIndex1.push(imgNodes[i])
+          }
+        }
+        if (imgNodesZIndex1.length === imgNodes.length) {
+          for (var i = 0; i < imgNodes.length; i++) {
+            imgNodes[i].style.zIndex = i + 2
+          }
+        }
+      })
+  },
 
   formatWebKitAnimationStr: function(x, animationSeq) {
     var cssAnimation2 = document.createElement('style')
@@ -136,7 +188,6 @@ ContaineD.prototype = { // prototype just declares functions
       dummystr += `}`
     }
     dummystr += `}`
-    console.log("dummystr: ", dummystr)
 
     var rules2 = document.createTextNode(dummystr)
 
@@ -151,7 +202,6 @@ ContaineD.prototype = { // prototype just declares functions
     for ( var i = 0; i < length; i++ ) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
-    console.log(result);
     if (this.webkitKeyframeNames.includes(result)){
       this.createWebkitName(length)
     }
@@ -160,8 +210,6 @@ ContaineD.prototype = { // prototype just declares functions
     }
     return result;
   },
-
-
 
   selectMode: function () { // select whether to be in debug mode or creative mode
 
@@ -214,7 +262,6 @@ ContaineD.prototype = { // prototype just declares functions
     const target = e.target
     var HTMLDivTag = document.getElementById("HTMLDivTag")
 
-    console.log("target: ", target)
     if (target.attachedDomTreeElement) {
 
       var toRemove = document.getElementById("elementCurrentlyViewing") // id is just one thing u need class.
@@ -241,7 +288,6 @@ ContaineD.prototype = { // prototype just declares functions
       para.textContent = "Currently viewing: " + "<" + target.tagName.toLowerCase() + attributeString + ">\n"
       para.setAttribute('id', 'elementCurrentlyViewing');
       HTMLDivTag.appendChild(para)
-      console.log("CSS of currently viewing: ", target.style)
 
       // parent element of the element we are currently viewing
       var attributeString = ""
@@ -291,7 +337,6 @@ ContaineD.prototype = { // prototype just declares functions
       HTMLDivTag.appendChild(div)
     }
 
-    console.log("view CSS : ", viewCSSButton)
 
     viewCSSButton.id = "viewCSSButton"
     viewCSSButton.style.marginTop = "10px"

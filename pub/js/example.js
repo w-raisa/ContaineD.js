@@ -63,12 +63,12 @@ var animationSequence3 = {
 	"0%": {
 		"bottom": "0", 
 		"background": "black",
-		"opacity": "0",
+		"opacity": "1",
 		},
 	"100%": {
 		"bottom": "10%", 
 		"background": "orange",
-		"opacity": "1",
+		"opacity": "0",
 		},
 }
 
@@ -80,28 +80,16 @@ containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "
 containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "paused")
 
 
-//containeD.slideshow()
-var animationSequence4 = {
-	"0%": {
-		"z-index": "1",
-		"opacity": "0",
-		},
-	"25%": {
-		"z-index": "2",
-		"opacity": "1",
-		},
-	"50%": {
-		"z-index": "3",
-	}
-}
+var slideshowCard = document.getElementById("containeD-slideshow-card-id-1")
+var imgNode3 = document.getElementById("containeD-slideshow-img-id-3")
+var imgNode2 = document.getElementById("containeD-slideshow-img-id-2")
+var imgNode1 = document.getElementById("containeD-slideshow-img-id-1")
+const imgNodes = [imgNode1,imgNode2,imgNode3] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
+containeD.slideshow(imgNodes, slideshowCard, 4)
+//containeD.slideshow(imgNode2, slideshowCard, 3)
+//containeD.slideshow(imgNode1, slideshowCard, 2)
 
 
-var slideShowImg1 = document.getElementById("containeD-slideshow-img-id-1")
-var slideShowImg2 = document.getElementById("containeD-slideshow-img-id-2")
-var slideShowImg3 = document.getElementById("containeD-slideshow-img-id-3")
-containeD.dynamicPausableCard(slideShowImg1, "linear", "infinite", 4, 0.5, "normal", animationSequence4)
-containeD.dynamicPausableCard(slideShowImg2, "linear", "infinite", 8, 0.5, "normal", animationSequence4)
-containeD.dynamicPausableCard(slideShowImg3, "linear", "infinite", 12, 0.5, "normal", animationSequence4)
 
 // var gridElement1 = document.getElementById("grid-item grid-item-1")
 // //containeD.openCoverEffect(gridElement1, gridElement)
