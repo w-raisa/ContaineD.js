@@ -3,23 +3,168 @@
   margin-bottom: 40px;
 }
 
+body {
+	font-family: "Arial", sans-serif;
+	font-size:  14px;
+	/*color: #000;
+	background: #333;*/
+}
+
+a {
+	color: #fff
+	text-decoration: none
+}
+
 #userWebsite {
   margin-left: 9px;
   border: 1px solid black;
 }
 
-
 .exampleClass3 {
 	margin: 90px;
 }
 
+.containeD-containeR {
+	margin-left: 600px;
+	background-color: black;
+}
+
+
+
+.containeD-containeR-dynamic {
+	/*margin-bottom: 100px;*/
+	height: 700px;
+	widht: 900px;
+	z-index: 1
+	background-color: green;
+}
+
+.containeD-dynamic-trigger-card {
+	/*width: 500px;
+	height: 200px;*/
+	/*border: 1px solid #5f9;
+	margin-left: 450px;
+	margin-top: 300px;*/
+
+	/*float: left;*/
+}
+
+.selectionContents {
+	height: 900px;
+}
+
+#dynamic-trigger-id-1 {
+	width: 500px;
+	height: 200px;
+	border: 1px solid pink;
+	margin-left: 450px;
+	margin-top: 150px;
+	text-align: center;
+	float: left;
+}
+
+#dynamic-trigger-id-2 {
+	width: 200px;
+	height: 190px;
+	border: 1px solid pink;
+	margin-top: 300px;
+	text-align: center;
+	float: left;
+}
+
+#dynamic-trigger-id-3 {
+	width: 200px;
+	height: 50px;
+	border: 1px solid pink;
+	margin-left: 490px;
+	/*margin-bottom: 300px;*/
+	text-align: center;
+	float: left;
+}
+
+#dynamic-trigger-id-4 {
+	width: 200px;
+	height: 50px;
+	border: 1px solid pink;
+	/*margin-left: 1200px;*/
+/*	margin-bottom: 200px;*/
+	/*margin-bottom: 300px;*/
+	text-align: center;
+	float: left;
+}
 
 
 .containeD-trigger-single-card {
-	width: 220px;
+	width: 300px;
 	height: 300px;
-	/*border: 1px solid #fff;*/
+	border: 1px solid #000;
 	margin-left: 11px;
 	margin-top: 500px;
 	position: absolute;
 }
+
+#dynamic-card-id-1 {
+	border: 1px solid #000;
+	margin: 47px;
+	width: 400px;
+	height: 100px;
+	text-align: center: 
+}
+
+#dynamic-card-id-2 {
+	border: 1px solid #000;
+	width: 180px;
+	height: 170px;
+	text-align: center: 
+}
+
+#dynamic-card-id-3 {
+	border: 1px solid #000;
+	width: 180px;
+	height: 30px;
+	text-align: center: 
+}
+
+#dynamic-card-id-4 {
+	border: 1px solid #000;
+	width: 180px;
+	height: 30px;
+	text-align: center: 
+}
+
+.containeD-slideshow-card {
+	/*position: relative;*/
+	z-index: 1;
+
+	/*margin: 100px;*/
+	height: 300px;
+	width: 220px;
+	border: 1px solid black;
+}
+
+.API-para {
+	font-size: 20px;
+	margin-bottom: 70px;
+	color: white;
+}
+
+.textP {
+	color: white;
+}
+
+.made-with {
+	margin: 43px;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+}
+
+.lib-descriptions {
+	text-align: center;
+	margin: 20px;
+	font-size: 20px;
+	color: white;
+}
+
+
+

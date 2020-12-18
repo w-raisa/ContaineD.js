@@ -1,8 +1,74 @@
-var gridElement = document.getElementById("containeD")
-//gridElement.style.margin = "90px"
-var triggerBox = document.querySelector(".containeD-trigger")
+// var triggerBox = document.querySelector(".containeD-trigger")
 var triggerBoxes = document.querySelectorAll(".containeD-trigger")
 var containeD = new ContaineD(triggerBoxes)
+
+var animationSequence2 = {
+	"0%": {
+		"bottom": "0", 
+		"background": "pink",
+		},
+	"100%": {
+		"bottom": "10%", 
+		"background": "black",
+		},
+}
+
+var animationSequence3 = {
+	"0%": {
+		"bottom": "0", 
+		"background": "black",
+		"opacity": "1",
+		},
+	"100%": {
+		"bottom": "5%", 
+		"background": "pink",
+		"opacity": "1",
+		},
+}
+
+// change the animation of one single card
+
+// landing page
+
+// says ContaineD.js on it
+var uniqueDynamicCard = document.getElementById("dynamic-card-id-1")
+var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-1")
+containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 2, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 2, "alternate", animationSequence3)
+
+// says Examples on it
+var uniqueDynamicCard = document.getElementById("dynamic-card-id-3")
+var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-3")
+containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 2, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 2, "alternate", animationSequence3, "running")
+
+// says GitHub on it
+var uniqueDynamicCard2 = document.getElementById("dynamic-card-id-4")
+var uniqueDynamicTrigger2 = document.getElementById("dynamic-trigger-id-4")
+containeD.dynamicPausableCard(uniqueDynamicCard2, "ease-in-out", "infinite", 2, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger2, "ease-in-out", "infinite", 2, "alternate", animationSequence3, "running")
+
+var triggerBox = document.querySelector(".containeD-trigger")
+var cardBox1 = document.querySelector(".containeD-box1")
+var cardBox2 = document.querySelector(".containeD-box2")
+var cardBox3 = document.querySelector(".containeD-box3")
+var cardBox4 = document.querySelector(".containeD-box4")
+containeD.translatingCards(triggerBox, cardBox1, 900, "ease-in-out", 200.5, 0, 0, 0, 0)
+containeD.backgroundColourTransition(cardBox1, "black", "pink", 7, "ll")
+containeD.translatingCards(triggerBox, cardBox2, 900, "ease-in-out", -202, 0, 0, 0, 0)
+containeD.backgroundColourTransition(cardBox2, "black", "pink", 7, "ll")
+
+
+
+
+
+
+
+
+
+
+
+
 
 // do the following to get all triggers to have to same animation for their individual cards.
 //var triggerBox = document.querySelector(".containeD-trigger")
@@ -92,13 +158,13 @@ var animationSequence4 = {
 }
 
 
-var slideshowCard = document.getElementById("containeD-slideshow-card-id-1")
-var imgNode4 = document.getElementById("containeD-slideshow-img-id-4")
-var imgNode3 = document.getElementById("containeD-slideshow-img-id-3")
-var imgNode2 = document.getElementById("containeD-slideshow-img-id-2")
-var imgNode1 = document.getElementById("containeD-slideshow-img-id-1")
-const imgNodes = [imgNode1,imgNode2,imgNode3, imgNode4] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
-containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate", animationSequence4)
+// var slideshowCard = document.getElementById("containeD-slideshow-card-id-1")
+// var imgNode4 = document.getElementById("containeD-slideshow-img-id-4")
+// var imgNode3 = document.getElementById("containeD-slideshow-img-id-3")
+// var imgNode2 = document.getElementById("containeD-slideshow-img-id-2")
+// var imgNode1 = document.getElementById("containeD-slideshow-img-id-1")
+// const imgNodes = [imgNode1,imgNode2,imgNode3, imgNode4] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
+// containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate", animationSequence4)
 //containeD.slideshow(imgNode2, slideshowCard, 3)
 //containeD.slideshow(imgNode1, slideshowCard, 2)
 
