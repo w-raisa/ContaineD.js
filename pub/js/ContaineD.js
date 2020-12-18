@@ -125,16 +125,10 @@ ContaineD.prototype = { // prototype just declares functions
     const randomLength = Math.floor((Math.random() * 52) + 1);
     const webkitName = this.createWebkitName(randomLength)
 
-    var zIndexToImgNode = {} // key is zIndex, value is the imagenode that has this zIndex
     for (var i = 0; i < imgNodes.length; i++) {
       imgNodes[i].style.zIndex = i + 2
-      zIndexToImgNode[i+2] = imgNodes[i]
     }
-    console.log("zIndexToImgNode: ", zIndexToImgNode)
 
-    //imgNode.style.zIndex = zIndex
-
-    //$(`#${imgNodes[2].id}`).click( 
     $(`#${slideshowCard.id}`).click(
       function() {
         console.log('he')
@@ -142,26 +136,10 @@ ContaineD.prototype = { // prototype just declares functions
         for (var i = 0; i < imgNodes.length; i++) {
           $(`#${imgNodes[i].id}`).click (
             function() {
-              console.log('heeee')
               $(this).css("z-index", 1)
             }
           )
         }
-
-
-        //$(`#${imgNode.id}`).css("animation", `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
-        //$(`#${imgNodes[2].id}`).css("z-index", imgNodes[2].style.zIndex - (imgNodes[2].style.zIndex -1))
-
-
-        // console.log("output: " , $(this).find(`.${imgNodes[0].className}`))
-        // var numImages = $(this).find(`.${imgNodes[0].className}`).length
-        //for (var i = (numImages - 1); i > 0; i--) {
-        //console.log("imgNodes: ", imgNodes[i])
-        //$(this).find(`.${imgNodes[0].className}`).css("z-index", imgNodes[numImages - 1].style.zIndex - (imgNodes[numImages - i].style.zIndex -1))
-        //} 
-        // $(this).find(`.${imgNodes[0].className}`).css("z-index", imgNodes[numImages - 1].style.zIndex - (imgNodes[numImages - 1].style.zIndex -1))
-
-
         var imgNodesZIndex1 = [] // holds all the images with zIndex = 1
         for (var i = 0; i < imgNodes.length; i++) {
           if (imgNodes[i].style.zIndex == 1) {
