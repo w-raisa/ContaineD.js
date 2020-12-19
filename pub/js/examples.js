@@ -34,7 +34,7 @@ var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
 containeD.translatingCards(triggerBox, cardBox1, 300, "ease-in-out", 150, 100, 0, 0, 20)
-containeD.backgroundColourTransition(cardBox1, "black", "yellow", 1, "ll")
+containeD.backgroundColourTransition(cardBox1, "black", "yellow", 1)
 containeD.translatingCards(triggerBox, cardBox2, 900, "cubic-bezier(1,-1.02,.13,.87)", 100, 210, 0, 0, 20)
 containeD.translatingCards(triggerBox, cardBox3, 600, "ease-in-out", -50, 200, 0, 0, 20)
 containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -150, 150, 0, 0, 20)
@@ -53,8 +53,8 @@ var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
 var card5 = document.getElementById('hehexd');
 //containeD.translateCard(chosenTriggerBox2, card5, "linear", 400, 0, 200, 0, 0, 180)
 
-containeD.backgroundColourTransition(card5, "black", "#c3268a", 1, "kk")
-containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
+containeD.backgroundColourTransition(card5, "black", "#c3268a", 1)
+containeD.backgroundColourTransition(triggerBox, "pink", "red", 1)
 
 
 var triggerBox3 = document.getElementById('containeD-trigger3');

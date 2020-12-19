@@ -40,19 +40,14 @@ ContaineD.prototype = { // prototype just declares functions
     });
   },
 
-  backgroundColourTransition: function(box, startingColour, endingColour, speed, x) {
-    box.style.animation = `${x} ${speed}s infinite`;
-    var cssAnimation = document.createElement('style')
-    cssAnimation.type = 'text/css'
-    var rules = document.createTextNode(
-      `@-webkit-keyframes ${x} {` +
-        `0% {background-color: ${startingColour};}` +
-        `50% {background-color: ${endingColour};}` +
-        `100% {background-color: ${startingColour};}` +
-      "}"
-    );
-    cssAnimation.appendChild(rules);
-    box.appendChild(cssAnimation);
+  backgroundColourTransition: function(box, startingColour, endingColour, speed) {
+    const randomlength = Math.floor((Math.random() * 52) + 1);
+    const randomWebkitName = this.createWebkitName(randomlength)
+    var animationSeq = {"0%": {"background-color": `${startingColour}`},
+                    "100%": {"background-color": `${endingColour}`},
+                  }
+    box.style.animation = `${randomWebkitName} ${speed}s infinite`;
+    this.formatWebKitAnimationStr(randomWebkitName, animationSeq, box)
   },
 
   dynamicPausableCards: function(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, animationPlayState=null) { 
@@ -130,7 +125,6 @@ ContaineD.prototype = { // prototype just declares functions
 
     $(`#${slideshowCard.id}`).click(
       function() {
-        console.log('he')
         $(this).css('animation', `${webkitName} ${timeFunction} ${speed}s ${iterationCount} ${animationDirection}`)
         for (var i = 0; i < imgNodes.length; i++) {
           $(`#${imgNodes[i].id}`).click (
@@ -169,7 +163,6 @@ ContaineD.prototype = { // prototype just declares functions
     var rules2 = document.createTextNode(dummystr)
 
     cssAnimation2.appendChild(rules2);
-    console.log("card: ", card)
     if (card === null) {
       return
     }
