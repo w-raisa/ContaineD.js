@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css">
+		<link rel="stylesheet" href="css/api.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="./LandingPage.html">ContaineD.js</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarColor02">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item">
+		        <a class="nav-link" href="./examples.html">Examples</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="./api.html">API</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="https://github.com/w-raisa">Github</a>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+
+		<div class="outer-container">
+			<h1>How to incorporate ContaineD.js into your code:</h1>
+			<h3>1. Link the ContaineD.js file to your HTML</h3>
+			<div>
+				<div class="code-container"> 
+					<p class="code"><pre>&lt;script type="text/javascript" src="js/ContaineD.js"&gt;&lt;/script&gt;</pre></p>
+				</div>
+			</div>
+
+			<h3>2. Import the CSS file</h3>
+			<div>
+				<div class="code-container"> 
+					<p class="code"><pre>&lt;link rel="stylesheet" href="css/containeD.css"&gt;</pre></p>
+				</div>
+			</div>
+
+			<h3>3. Import ContaineD.js dependencies</h3>
+			<div>
+				<div class="code-container"> 
+					<p class="code"><pre>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;</pre></p>
+				</div>
+			</div>
+
+			<h3>4. Write HTML markup to get ContaineD.js elements onto your page</h3>
+			<div>
+				<div class="code-container"> 
+					<p class="code"><pre>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;</pre></p>
+				</div>
+			</div>
+
+			<h3>5. Create an instance of the library in JavaScript to be able to animate those HTML elements</h3>
+			<div>
+				<div class="code-container"> 
+					<p class="code"><pre>var triggerBoxes = document.querySelectorAll(".containeD-trigger")</pre></p>
+					<p class="code"><pre>var containeD = new ContaineD(triggerBoxes)</pre></p>
+				</div>
+			</div>
+
+			<h3>You can manipulate various DOM elements using ContaineD.js, and there are methods as part of the library that will help you do this.</h3>
+			<h3>Methods</h2>
+			<div>
+				<div class="methods-container"> 
+					<ul>
+						<li class="method-container">
+							<div class="method-description">
+								<p>translatingCards(cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg)</p>
+								<p>Perform a translation of cardBox as specified by the arguments. This function will cause all DOM elements that have the same HTML class 	as cardBox to be translated, hence the name translatingCards. If you would like to translate exactly one card and none other, see translateCard.</p>
+								<p>Arguments:</p>
+								<ul>
+									<li>
+										cardBox: DOM object, the container to apply a translation to.
+									</li>
+									<li>
+										speed: int, specifies how fast the translation is.
+									</li>
+									<li>
+										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+									</li>
+									<li>
+										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+									</li>
+									<li>
+										translateY: int, specifies how many units in Y on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+									</li>
+									<li>
+										endX: int, specifies the X coordinate to terminate the translation at.
+									</li>
+									<li>
+										endY: int, specifies the Y coordinate to terminate the translation at.
+									</li>
+									<li>
+										rotationDeg: int, specifies in degrees how much to rotate cardBox by during the translation.
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="method-container">
+							<div class="method-description">
+								<p>translateCard(cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg)</p>
+								<p>Perform a translation on cardBox as specified by the arguments. Only the element cardBox will be affected by the specified translation.</p>
+								<p>Arguments:</p>
+								<ul>
+									<li>
+										cardBox: DOM object, specified the container to animate/apply a translation to.
+									</li>
+									<li>
+										speed:  int, specifies how fast the translation is.
+									</li>
+									<li> 
+										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+									</li>
+									<li>
+										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+									</li>
+									<li>
+										translateY: int, specifies how many units in Y on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+									</li>
+									<li>
+										endX: int, specifies the X coordinate to terminate the translation at.
+									</li>
+									<li>
+										endY: int, specifies the Y coordinate to terminate the translation at.
+									</li>
+									<li>
+										rotationDeg: int, specifies in degrees how much to rotate cardBox by during the translation.
+									</li>
+								</ul>
+							</div>
+						</li>
+
+
+						<li class="method-container">
+							<div class="method-description">
+								<p>backgroundColourTransition(box, startingColour, endingColour, speed)</p>
+								<p>Apply a colour transition on box from startingColour to endingColor.</p>
+								<p>Arguments:</p>
+								<ul>
+									<li>
+										box: DOM element, specifies the container to animate/set a background colour transition on.
+									</li>
+									<li>
+										startingColour: str, specifies the colour the transition will begin with. Accepts names of colours ie startingColour=“black” is valid, as well as hexadecimal values of colours ie startingColor=“#000000” is valid.
+									</li>
+									<li> 
+										endingColour: str, specifies the colour the transition will end with. Accepts names of colours ie endingColour=“black” is valid, as well as hexadecimal values of colours ie endingColor=“#000000” is valid.
+									</li>
+									<li>
+										speed: int, specifies how fast the animation is.
+									</li>
+								</ul>
+							</div>
+						</li>
+
+
+						<li class="method-container">
+							<div class="method-description">
+								<p>dynamicPausableCards(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, animationPlayState=null)</p>
+								<p>Applies an animation sequence to card</p>
+								<p>Arguments:</p>
+								<ul>
+									<li>
+										card: DOM element, the container to animate
+									</li>
+									<li>
+										timeFunction:  str, specifies the rate the animation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+									</li>
+									<li> 
+										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (int). If you would like animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
+
+									</li>
+									<li>
+										speed:  int, specifies how fast the animation is.
+									</li>
+									<li>
+										animationDirection: str, specifies whether the animation will play forwards, backwards, or alternating between forwards and backwards. Accepted values are “normal”, “reverse”, “alternate”, and “alternate-reverse”. 
+									</li>
+									<li>
+										animationSeq: json, specifies the individual steps the animation will exhibit from start to end. The keys of the JSON object specify the step of the animation, and the values specify what will take place at this step of the animation. The keys of the JSON object must be ints, ranging between 0 and 100 inclusive. The values are another JSON object, whose keys represent the name of a CSS property, and the values represent the value that CSS property will have.
+									</li>
+									<li>
+										animationPlayState: str, specifies the state this animation will start off with, and the state it will be in when a mouse hovers over card. The state the animation will be in when mouse hovers over card will be opposite of animationPlayState. Accepts “running” and “paused”, which are opposites of each other. 
+										<ul>
+											<li>
+												If animationPlayState=“running”, then the animation will begin right away, but upon the event a mouse hovers over card, the animation will pause. When the mouse leaves card, the animation will no longer be paused and will continue running. 
+											</li>
+											<li>
+												Similarly if animationPlayState=“paused”, the animation will not play unless a mouse hovers over card. animationPlayState is also an optional argument, if it is not provided, then the animation will run regardless of whether a mouse hovers over card or not.
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<li class="method-container">
+							<div class="method-description">
+								<p>slideshow(imgNodes, slideshowCard, timeFunction, iterationCount, speed, animationDirection, animationSeq=null)</p>
+								<p>Create a interactive and animatable slideshow presentation on the container slideshowCard, using images in imgNodes</p>
+								<p>Arguments:</p>
+								<ul>
+									<li>
+										imgNodes: array, holds the image DOM elements of the images to appear in the slideshow.
+									</li>
+									<li>
+										slideshowCard: DOM object, specifies the container the slideshow will take place in.
+									</li>
+									<li> 
+										timeFunction:  str, specifies the rate the animation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+									</li>
+									<li>
+										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (int). If you would like animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
+									</li>
+									<li>
+										speed:  int, specifies how fast the animation is.
+									</li>
+									<li>
+										animationDirection: str, specifies whether the animation will play forwards, backwards, or alternating between forwards and backwards. Accepted values are “normal”, “reverse”, “alternate”, and “alternate-reverse”. 
+									</li>
+									<li>
+										animationSeq: json, specifies the individual steps the animation will exhibit from start to end. The keys of the JSON object specify the step of the animation, and the values specify what will take place at this step of the animation. The keys of the JSON object must be ints, ranging between 0 and 100 inclusive. The values are another JSON object, whose keys represent the name of a CSS property, and the values represent the value that CSS property will have.
+									</li>
+								</ul>
+							</div>
+						</li>
+
+
+
+
+
+
+
+
+
+
+
+
+					</ul>
+
+
+
+
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+
+	</body>
+</html>
