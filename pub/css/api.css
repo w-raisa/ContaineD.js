@@ -39,14 +39,15 @@ h3 {
 .methods-container {
 	margin-left: 240px;
 	margin-top: 20px;
+	margin-bottom: 20px;
 	width: 960px;
 	height: auto;
 	border: 4px solid white;
 }
 
 .method-container {
-	margin-top: 40px;
-	margin-bottom: 40px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	border: 1px solid white;
 	width: 880px;
 	height: auto;
@@ -55,5 +56,44 @@ h3 {
 .method-description {
 	height:auto;
 	width: 870px;
-	margin: 10px;
+	margin: 5px;
+
 }
+
+.HTML-examples {
+	text-align: left;
+	margin: 20px;
+	height: auto;
+	width: 910px;
+	border: 1px solid white;
+}
+
+.html-markup {
+	margin-right: 100px;
+	color: white;
+	width: auto;
+}
+
+pre {
+	height: auto;
+	width: auto;
+	overflow: auto;
+	margin-left: 10px;
+	margin-top: 10px;
+	text-align: left;
+}
+
+code {
+	height: auto;
+	width: auto;
+}
+
+
+.note {
+	font-size: 12px;
+}
+
+h3 {
+	margin: 30px;
+}
+
