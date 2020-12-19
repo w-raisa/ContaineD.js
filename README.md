@@ -1,7 +1,7 @@
 Welcome to ContaineD.js, a library that allows you to make beautiful CSS animations in only a few lines of code. 
 Getting Started
 1. Link the ContaineD.js file to your HTML: <script type="text/javascript" src="js/ContaineD.js"></script>
-2. 2. Import the CSS file: <link rel="stylesheet" href="css/containeD.css">
+2. Import the CSS file: <link rel="stylesheet" href="css/containeD.css">
 3. Import ContaineD.js dependencies (just jQuery): <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 4. Write HTML markup to get ContaineD.js elements onto your page:
 - If you would like to use the Translating Deck of Cards (as seen on the Examples page), incorporate the following into your HTML:
@@ -69,6 +69,7 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 As seen in step 6, you can manipulate various DOM elements using ContaineD.js, and there are methods as part of the library that will help you do this.
 
 Official ContaineD.js website: https://tranquil-lake-94651.herokuapp.com/
+
 Official ContaineD.js documentation: https://tranquil-lake-94651.herokuapp.com/api.html
 
 
