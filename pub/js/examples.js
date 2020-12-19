@@ -28,33 +28,33 @@ var animationSequence3 = {
 
 
 // do the following to get all triggers to have to same animation for their individual cards.
-//var triggerBox = document.querySelector(".containeD-trigger")
-// var cardBox1 = document.querySelector(".containeD-box1")
-// var cardBox2 = document.querySelector(".containeD-box2")
-// var cardBox3 = document.querySelector(".containeD-box3")
-// var cardBox4 = document.querySelector(".containeD-box4")
-// containeD.translatingCards(triggerBox, cardBox1, 300, "ease-in-out", 200, 200, 0, 0, 20)
-// containeD.backgroundColourTransition(cardBox1, "black", "yellow", 1, "ll")
-// containeD.translatingCards(triggerBox, cardBox2, 900, "cubic-bezier(1,-1.02,.13,.87)", 100, 200, 0, 0, 20)
-// containeD.translatingCards(triggerBox, cardBox3, 600, "ease-in-out", 0, 200, 0, 0, 20)
-// containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -100, 200, 0, 0, 20)
+var triggerBox = document.querySelector(".containeD-trigger")
+var cardBox1 = document.querySelector(".containeD-box1")
+var cardBox2 = document.querySelector(".containeD-box2")
+var cardBox3 = document.querySelector(".containeD-box3")
+var cardBox4 = document.querySelector(".containeD-box4")
+containeD.translatingCards(triggerBox, cardBox1, 300, "ease-in-out", 200, 200, 0, 0, 20)
+containeD.backgroundColourTransition(cardBox1, "black", "yellow", 1, "ll")
+containeD.translatingCards(triggerBox, cardBox2, 900, "cubic-bezier(1,-1.02,.13,.87)", 100, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox3, 600, "ease-in-out", 0, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -100, 200, 0, 0, 20)
 
 
-// // do the following to individually change the animation of cards of a single trigger, developer using this library must provide ids to the cards and the trigger.
-// // here we are changing the 1st card and the 4th card of trigger3.
-// var chosenTriggerBox = document.getElementById('containeD-trigger3');
-// var card1 = document.getElementById('containeD-box1-id');
-// containeD.translateCard(chosenTriggerBox, card1, "linear", 100, -100, 200, 0, 0, 180)
-// var card4 = document.getElementById('containeD-box4-id');
-// containeD.translateCard(chosenTriggerBox, card4, "linear", 400, 200, 200, 0, 0, 180)
+// do the following to individually change the animation of cards of a single trigger, developer using this library must provide ids to the cards and the trigger.
+// here we are changing the 1st card and the 4th card of trigger3.
+var chosenTriggerBox = document.getElementById('containeD-trigger3');
+var card1 = document.getElementById('containeD-box1-id');
+containeD.translateCard(chosenTriggerBox, card1, "linear", 100, -100, 200, 0, 0, 180)
+var card4 = document.getElementById('containeD-box4-id');
+containeD.translateCard(chosenTriggerBox, card4, "linear", 400, 200, 200, 0, 0, 180)
 
-// // changing the first card of trigger 2 only.
-// var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
-// var card5 = document.getElementById('hehexd');
-// containeD.translateCard(chosenTriggerBox2, card5, "linear", 400, 0, 200, 0, 0, 180)
+// changing the first card of trigger 2 only.
+var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
+var card5 = document.getElementById('hehexd');
+containeD.translateCard(chosenTriggerBox2, card5, "linear", 400, 0, 200, 0, 0, 180)
 
-// containeD.backgroundColourTransition(card5, "orange", "green", 1, "kk")
-// containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
+containeD.backgroundColourTransition(card5, "orange", "green", 1, "kk")
+containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
 
 
 var card = document.querySelector(".containeD-dynamic-card")
@@ -105,11 +105,9 @@ containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1
 
 var animationSequence4 = {
 	"0%": { 
-		"left": "0",
 		"opacity": "1",
 		},
 	"100%": {
-		"left": "10%",
 		"opacity": "0.5",
 		},
 }
@@ -122,8 +120,25 @@ var imgNode2 = document.getElementById("containeD-slideshow-img-id-2")
 var imgNode1 = document.getElementById("containeD-slideshow-img-id-1")
 const imgNodes = [imgNode1,imgNode2,imgNode3, imgNode4] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
 containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate", animationSequence4)
-containeD.slideshow(imgNode2, slideshowCard, 3)
-containeD.slideshow(imgNode1, slideshowCard, 2)
+
+
+var slideshowCard2 = document.getElementById("containeD-slideshow-card-id-2")
+var imgNode9 = document.getElementById("containeD-slideshow-img-id-9")
+var imgNode8 = document.getElementById("containeD-slideshow-img-id-8")
+var imgNode7 = document.getElementById("containeD-slideshow-img-id-7")
+var imgNode6 = document.getElementById("containeD-slideshow-img-id-6")
+var imgNode5 = document.getElementById("containeD-slideshow-img-id-5")
+const imgNodes2 = [imgNode5,imgNode6,imgNode7, imgNode8,imgNode9] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
+containeD.slideshow(imgNodes2, slideshowCard2, "ease-in-out", "infinite", 1, "alternate", animationSequence4)
+
+var slideshowCard3 = document.getElementById("containeD-slideshow-card-id-3")
+var imgNode12 = document.getElementById("containeD-slideshow-img-id-12")
+var imgNode11 = document.getElementById("containeD-slideshow-img-id-11")
+var imgNode10 = document.getElementById("containeD-slideshow-img-id-10")
+const imgNodes3 = [imgNode10, imgNode11,imgNode12] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
+containeD.slideshow(imgNodes3, slideshowCard3, "ease-in-out", "infinite", 1, "alternate", animationSequence4)
+
+
 
 
 

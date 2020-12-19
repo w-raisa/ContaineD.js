@@ -4,14 +4,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/containeD.css">
-  <link rel="stylesheet" href="css/styles.css">
   <meta charset="utf-8">
   <title>CSC309: JavaScript Intro</title>
  </head>
  <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><i>ContaineD.js</i></a>
+      <a class="navbar-brand" href="./LandingPage.html"><i>ContaineD.js</i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,7 +20,7 @@
             <a class="nav-link active" aria-current="page" href="./examples.html">Examples</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">API</a>
+            <a class="nav-link active" aria-current="page" href="./api.html">API</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="https://github.com/w-raisa">Github</a>
@@ -30,68 +29,74 @@
       </div>
     </div>
   </nav>
+  
+  <div class="code-container">
+      
+  </div>
 
-  <!-- <div class="containeD-containeR">
-  <div class="containeD-trigger"> 
-    <p class="textP">lol</p>
-    <div class="containeD-box1">
-      <img class="card-img" src="images/download.jpg"/>
+  <div class="containeD-containeR">
+    <div class="containeD-trigger"> 
+      <p class="textP">lol</p>
+      <div class="containeD-box1">
+        <img class="card-img" src="images/download.jpg"/>
+      </div>
+      <div class="containeD-box2">
+        <img class="card-img" src="images/a.jpg"/>
+        <p>2</p>
+      </div>
+      <div class="containeD-box3">
+        <img class="card-img" src="images/b.jpg"/>
+        <p>3</p>
+      </div>
+      <div class="containeD-box4">
+        <img class="card-img" src="images/c.jpg"/>
+        <p>4</p>
+      </div>
     </div>
-    <div class="containeD-box2">
-      <img class="card-img" src="images/a.jpg"/>
-      <p>2</p>
+    <div class="containeD-trigger" id="containeD-trigger2"> 
+      <div class="containeD-box1" id="hehexd">
+        <p>1</p>
+      </div>
+      <div class="containeD-box2">
+        <p>2</p>
+      </div>
+      <div class="containeD-box3">
+        <p>3</p>
+      </div>
     </div>
-    <div class="containeD-box3">
-      <img class="card-img" src="images/b.jpg"/>
-      <p>3</p>
+    <div class="containeD-trigger" id="containeD-trigger3"> 
+      <div class="containeD-box1" id="containeD-box1-id">
+        <p>1</p>
+      </div>
+      <div class="containeD-box2" id="containeD-box2-id">
+        <p>2</p>
+      </div>
+      <div class="containeD-box3" id="containeD-box3-id">
+        <p>3</p>
+      </div>
+      <div class="containeD-box4" id="containeD-box4-id">
+        <p>4</p>
+      </div>
     </div>
-    <div class="containeD-box4">
-      <img class="card-img" src="images/c.jpg"/>
-      <p>4</p>
+    <div class="containeD-trigger"> 
+      <div class="containeD-box1">
+        <p>1</p>
+      </div>
+      <div class="containeD-box2">
+        <p>2</p>
+      </div>
+      <div class="containeD-box3">
+        <p>3</p>
+      </div>
+      <div class="containeD-box4">
+        <p>4</p>
+      </div>
     </div>
   </div>
-  <div class="containeD-trigger" id="containeD-trigger2"> 
-    <div class="containeD-box1" id="hehexd">
-      <p>1</p>
-    </div>
-    <div class="containeD-box2">
-      <p>2</p>
-    </div>
-    <div class="containeD-box3">
-      <p>3</p>
-    </div>
-  </div>
-  <div class="containeD-trigger" id="containeD-trigger3"> 
-    <div class="containeD-box1" id="containeD-box1-id">
-      <p>1</p>
-    </div>
-    <div class="containeD-box2" id="containeD-box2-id">
-      <p>2</p>
-    </div>
-    <div class="containeD-box3" id="containeD-box3-id">
-      <p>3</p>
-    </div>
-    <div class="containeD-box4" id="containeD-box4-id">
-      <p>4</p>
-    </div>
-  </div>
-  <div class="containeD-trigger"> 
-    <div class="containeD-box1">
-      <p>1</p>
-    </div>
-    <div class="containeD-box2">
-      <p>2</p>
-    </div>
-    <div class="containeD-box3">
-      <p>3</p>
-    </div>
-    <div class="containeD-box4">
-      <p>4</p>
-    </div>
-  </div>
-</div> -->
 
-
+  <div class="code-container">
+      
+  </div>
 
 
   <div class="containeD-containeR-dynamic">
@@ -118,14 +123,40 @@
     </div>
   </div>
 
-
-
-  <div class="containeD-slideshow-card" id="containeD-slideshow-card-id-1">
-    <img class="containeD-slideshow-img" src="images/a.jpg" id="containeD-slideshow-img-id-1"/>
-    <img class="containeD-slideshow-img" src="images/b.jpg" id="containeD-slideshow-img-id-2"/>
-    <img class="containeD-slideshow-img" src="images/c.jpg" id="containeD-slideshow-img-id-3"/>
-    <img class="containeD-slideshow-img" src="images/download.jpg" id="containeD-slideshow-img-id-4"/>
+  <div class="code-container">
+      
   </div>
+
+  <div class="containeD-slideshow-containeR">
+    <div class="containeD-slideshow-card" id="containeD-slideshow-card-id-1">
+      <img class="containeD-slideshow-img" src="images/air-force-1s.jpg" id="containeD-slideshow-img-id-1"/>
+      <img class="containeD-slideshow-img" src="images/air-force-1s-2.jpg" id="containeD-slideshow-img-id-2"/>
+      <img class="containeD-slideshow-img" src="images/air-force-1s-3.jpg" id="containeD-slideshow-img-id-3"/>
+      <img class="containeD-slideshow-img" src="images/air-force-1s-4.jpg" id="containeD-slideshow-img-id-4"/>
+      <h1 class="containeD-slideshow-h1">Black Nike Air Force 1s</h1>
+      <p class="containeD-slideshow-p">$200, while supplies last</p>
+    </div>
+    <div class="containeD-slideshow-card" id="containeD-slideshow-card-id-2">
+      <img class="containeD-slideshow-img" src="images/af1s-white-1.jpg" id="containeD-slideshow-img-id-5"/>
+      <img class="containeD-slideshow-img" src="images/af1s-white-2.jpeg" id="containeD-slideshow-img-id-6"/>
+      <img class="containeD-slideshow-img" src="images/af1s-white-3.jpeg" id="containeD-slideshow-img-id-7"/>
+      <img class="containeD-slideshow-img" src="images/af1s-white-4.jpg" id="containeD-slideshow-img-id-8"/>
+      <img class="containeD-slideshow-img" src="images/af1s-white-5.jpg" id="containeD-slideshow-img-id-9"/>
+      <h1 class="containeD-slideshow-h1">White Nike Air Force 1s</h1>
+      <p class="containeD-slideshow-p">$200, while supplies last</p>
+    </div>
+    <div class="containeD-slideshow-card" id="containeD-slideshow-card-id-3">
+      <img class="containeD-slideshow-img" src="images/docmartens1.jpg" id="containeD-slideshow-img-id-10"/>
+      <img class="containeD-slideshow-img" src="images/docmartens2.jpg" id="containeD-slideshow-img-id-11"/>
+      <img class="containeD-slideshow-img" src="images/docmartens3.jpg" id="containeD-slideshow-img-id-12"/>
+      <h1 class="containeD-slideshow-h1">Doc Martens</h1>
+      <p class="containeD-slideshow-p">Sale $150, limited quantities remaining</p>
+    </div>
+  </div>
+
+
+
+
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/ContaineD.js"></script>
