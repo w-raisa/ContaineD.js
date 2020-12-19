@@ -9,3 +9,27 @@
 	background-color: black;
 }
 
+.containeD-containeR {
+	background-color: black;
+	margin-left: 250px;
+}
+
+.containeD-containeR-dynamic {
+	height: 1200px;
+	background-color: black;
+	margin-left:310px;
+}
+
+.containeD-slideshow-containeR {
+	background-color: black;
+	margin-left: 250px;
+}
+
+.containeD-dynamic-card {
+	height: 300px;
+	width: 220px;
+}
+
+.containeD-dynamic-trigger-card {
+	margin-left: 10px;
+}
