@@ -33,11 +33,11 @@ var cardBox1 = document.querySelector(".containeD-box1")
 var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
-containeD.translatingCards(triggerBox, cardBox1, 300, "ease-in-out", 150, 100, 0, 0, 20)
-containeD.backgroundColourTransition(cardBox1, "black", "yellow", 1)
-containeD.translatingCards(triggerBox, cardBox2, 900, "cubic-bezier(1,-1.02,.13,.87)", 100, 210, 0, 0, 20)
-containeD.translatingCards(triggerBox, cardBox3, 600, "ease-in-out", -50, 200, 0, 0, 20)
-containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -150, 150, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox1, 300, "ease-in-out", 200, -100, 0, 0, 20)
+// containeD.backgroundColourTransition(cardBox1, "black", "yellow", 1)
+containeD.translatingCards(triggerBox, cardBox2, 900, "cubic-bezier(1,-1.02,.13,.87)", 200, 50, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox3, 600, "ease-in-out", 100, 200, 0, 0, 20)
+containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -100, 220, 0, 0, 20)
 
 
 // do the following to individually change the animation of cards of a single trigger, developer using this library must provide ids to the cards and the trigger.
@@ -114,39 +114,10 @@ containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "
 containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "running")
 
 
-var uniqueDynamicCard2 = document.getElementById("dynamic-card-id-2")
-var uniqueDynamicTrigger2 = document.getElementById("dynamic-trigger-id-2")
-containeD.dynamicPausableCard(uniqueDynamicCard2, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger2, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "running")
-
-
 var uniqueDynamicCard3 = document.getElementById("dynamic-card-id-3")
 var uniqueDynamicTrigger3 = document.getElementById("dynamic-trigger-id-3")
 containeD.dynamicPausableCard(uniqueDynamicCard3, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
 containeD.dynamicPausableCard(uniqueDynamicTrigger3, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "running")
-
-
-
-var uniqueDynamicCard = document.getElementById("dynamic-card-id-1")
-var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-1")
-containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "running")
-
-
-var uniqueDynamicCard2 = document.getElementById("dynamic-card-id-2")
-var uniqueDynamicTrigger2 = document.getElementById("dynamic-trigger-id-2")
-containeD.dynamicPausableCard(uniqueDynamicCard2, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger2, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "running")
-
-
-var uniqueDynamicCard3 = document.getElementById("dynamic-card-id-3")
-var uniqueDynamicTrigger3 = document.getElementById("dynamic-trigger-id-3")
-containeD.dynamicPausableCard(uniqueDynamicCard3, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger3, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "running")
-
-
-
-
 
 
 var uniqueDynamicCard4 = document.getElementById("dynamic-card-id-4")
@@ -160,11 +131,17 @@ var uniqueDynamicTrigger5 = document.getElementById("dynamic-trigger-id-5")
 containeD.dynamicPausableCard(uniqueDynamicCard5, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
 containeD.dynamicPausableCard(uniqueDynamicTrigger5, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "paused")
 
-
 var uniqueDynamicCard6 = document.getElementById("dynamic-card-id-6")
 var uniqueDynamicTrigger6 = document.getElementById("dynamic-trigger-id-6")
 containeD.dynamicPausableCard(uniqueDynamicCard6, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger6, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "paused")
+containeD.dynamicPausableCard(uniqueDynamicTrigger6, "ease-in-out", "infinite", 1, "alternate", animationSequence3)
+
+
+
+var uniqueDynamicCard7 = document.getElementById("dynamic-card-id-7")
+var uniqueDynamicTrigger7 = document.getElementById("dynamic-trigger-id-7")
+containeD.dynamicPausableCard(uniqueDynamicCard7, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger7, "ease-in-out", "infinite", 1, "alternate", animationSequence3)
 
 
 var animationSequence10 = {
@@ -179,27 +156,6 @@ var animationSequence10 = {
 		"opacity": "1",
 		},
 }
-
-
-
-var uniqueDynamicCard7 = document.getElementById("dynamic-card-id-7")
-var uniqueDynamicTrigger7 = document.getElementById("dynamic-trigger-id-7")
-containeD.dynamicPausableCard(uniqueDynamicCard7, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger7, "ease-in-out", "infinite", 1, "alternate", animationSequence10)
-
-
-var uniqueDynamicCard8 = document.getElementById("dynamic-card-id-8")
-var uniqueDynamicTrigger8 = document.getElementById("dynamic-trigger-id-8")
-containeD.dynamicPausableCard(uniqueDynamicCard8, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger8, "ease-in-out", "infinite", 1, "alternate", animationSequence10)
-
-
-var uniqueDynamicCard9 = document.getElementById("dynamic-card-id-9")
-var uniqueDynamicTrigger9 = document.getElementById("dynamic-trigger-id-9")
-containeD.dynamicPausableCard(uniqueDynamicCard9, "ease-in-out", "infinite", 1, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger9, "ease-in-out", "infinite", 1, "alternate", animationSequence10)
-
-
 
 var animationSequence4 = {
 	"0": { 
