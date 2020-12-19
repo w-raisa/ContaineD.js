@@ -19,12 +19,14 @@ Getting Started
 </div>
 
 - If you would like to use the Dynamic Pausable Cards (as seen on the Examples page), incorporate the following into your HTML:
+```
 <div class="containeD-containeR-dynamic">
     <div class="containeD-dynamic-trigger-card" id="dynamic-trigger-id-1">
       <div class="containeD-dynamic-card" id="dynamic-card-id-1">
       </div>
     </div>
 </div>
+```
 
 - If you would like to use Slideshow (as seen on the Examples page), incorporate the following into your HTML:
 <div class="containeD-slideshow-containeR">
