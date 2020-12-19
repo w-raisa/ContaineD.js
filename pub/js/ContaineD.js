@@ -46,7 +46,7 @@ ContaineD.prototype = { // prototype just declares functions
     var animationSeq = {"0%": {"background-color": `${startingColour}`},
                     "100%": {"background-color": `${endingColour}`},
                   }
-    box.style.animation = `${randomWebkitName} ${speed}s infinite`;
+    box.style.animation = `${randomWebkitName} ${speed}s infinite alternate`;
     this.formatWebKitAnimationStr(randomWebkitName, animationSeq, box)
   },
 

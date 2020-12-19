@@ -55,13 +55,13 @@ var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
 containeD.translatingCards(triggerBox, cardBox1, 900, "ease-in-out", 0, -190, 0, 0, 0)
-containeD.backgroundColourTransition(cardBox1, "black", "pink", 7, "ll")
+containeD.backgroundColourTransition(cardBox1, "black", "pink", 5)
 containeD.translatingCards(triggerBox, cardBox2, 900, "ease-in-out", 190, 0, 0, 0, 0)
-containeD.backgroundColourTransition(cardBox2, "pink", "black", 7, "llpa")
+containeD.backgroundColourTransition(cardBox2, "pink", "black", 5)
 containeD.translatingCards(triggerBox, cardBox3, 900, "ease-in-out", 0, 190, 0, 0, 0)
-containeD.backgroundColourTransition(cardBox3, "black", "pink", 7, "llpaa")
+containeD.backgroundColourTransition(cardBox3, "black", "pink", 5)
 containeD.translatingCards(triggerBox, cardBox4, 900, "ease-in-out", -190, 0, 0, 0, 0)
-containeD.backgroundColourTransition(cardBox4, "pink", "black", 7, "llpaaa")
+containeD.backgroundColourTransition(cardBox4, "pink", "black", 5)
 
 
 
