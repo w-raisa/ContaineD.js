@@ -175,7 +175,7 @@ var animationSequence10 = {
 		},
 	"100%": {
 		"bottom": "10%", 
-		"background": "yellow",
+		"background": "#b4ffdc",
 		"opacity": "1",
 		},
 }
