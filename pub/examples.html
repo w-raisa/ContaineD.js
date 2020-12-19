@@ -2,128 +2,133 @@
 <html lang="en">
  <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/containeD.css">
   <link rel="stylesheet" href="css/styles.css">
   <meta charset="utf-8">
   <title>CSC309: JavaScript Intro</title>
  </head>
  <body>
-  <pre id="element-in-hierarchy"></pre>
-  <!--
-  <div id="userWebsite" class="pageClass">
-    <h1 class="exampleClass" id="exampleID">Your Page shows up here!</h1>
-    <h2>The box above this box is where the developer can see what they clicked on, and information summarizing that container</h2>
-    <p>This box is where the user would see their own website in development, <b class="exampleClass2">they can click on any container and they will recieve a summary of the container <i>in the above box</b></i></h2>
-    <p>Today's log: </p>
-    <ol>
-      <li class="exampleClass3">I had a couple of things due on the day alpha release was due. in one single day,... yeah. So go easy on me for the peer review :)</li>
-      <li>Take out the trash</li>
-      <li>No I'm not talking about this library</li>
-    </ol>
-    <p>Check out this social network called <a href="https://facebook.com">facebook</a>. <s id="exampleId2">I hear it's great and that you have a lot of privacy</s></p>
-    <p>I always thought <i class="pears">pears</i> were funny, hehe,...</p> 
-  -->
-
-
-
-<!-- 
-
-    <div class="containeD-containeR">
-      <div class="containeD-trigger"> 
-        <p class="textP">lol</p>
-        <div class="containeD-box1">
-          <img class="card-img" src="images/download.jpg"/>
-        </div>
-        <div class="containeD-box2">
-          <img class="card-img" src="images/a.jpg"/>
-          <p>2</p>
-        </div>
-        <div class="containeD-box3">
-          <img class="card-img" src="images/b.jpg"/>
-          <p>3</p>
-        </div>
-        <div class="containeD-box4">
-          <img class="card-img" src="images/c.jpg"/>
-          <p>4</p>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i>ContaineD.js</i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./examples.html">Examples</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">API</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://github.com/w-raisa">Github</a>
+          </li>
+        </ul>
       </div>
-      <div class="containeD-trigger" id="containeD-trigger2"> 
-        <div class="containeD-box1" id="hehexd">
-          <p>1</p>
-        </div>
-        <div class="containeD-box2">
-          <p>2</p>
-        </div>
-        <div class="containeD-box3">
-          <p>3</p>
-        </div>
-      </div>
-      <div class="containeD-trigger" id="containeD-trigger3"> 
-        <div class="containeD-box1" id="containeD-box1-id">
-          <p>1</p>
-        </div>
-        <div class="containeD-box2" id="containeD-box2-id">
-          <p>2</p>
-        </div>
-        <div class="containeD-box3" id="containeD-box3-id">
-          <p>3</p>
-        </div>
-        <div class="containeD-box4" id="containeD-box4-id">
-          <p>4</p>
-        </div>
-      </div>
-      <div class="containeD-trigger"> 
-        <div class="containeD-box1">
-          <p>1</p>
-        </div>
-        <div class="containeD-box2">
-          <p>2</p>
-        </div>
-        <div class="containeD-box3">
-          <p>3</p>
-        </div>
-        <div class="containeD-box4">
-          <p>4</p>
-        </div>
+    </div>
+  </nav>
+
+  <!-- <div class="containeD-containeR">
+  <div class="containeD-trigger"> 
+    <p class="textP">lol</p>
+    <div class="containeD-box1">
+      <img class="card-img" src="images/download.jpg"/>
+    </div>
+    <div class="containeD-box2">
+      <img class="card-img" src="images/a.jpg"/>
+      <p>2</p>
+    </div>
+    <div class="containeD-box3">
+      <img class="card-img" src="images/b.jpg"/>
+      <p>3</p>
+    </div>
+    <div class="containeD-box4">
+      <img class="card-img" src="images/c.jpg"/>
+      <p>4</p>
+    </div>
+  </div>
+  <div class="containeD-trigger" id="containeD-trigger2"> 
+    <div class="containeD-box1" id="hehexd">
+      <p>1</p>
+    </div>
+    <div class="containeD-box2">
+      <p>2</p>
+    </div>
+    <div class="containeD-box3">
+      <p>3</p>
+    </div>
+  </div>
+  <div class="containeD-trigger" id="containeD-trigger3"> 
+    <div class="containeD-box1" id="containeD-box1-id">
+      <p>1</p>
+    </div>
+    <div class="containeD-box2" id="containeD-box2-id">
+      <p>2</p>
+    </div>
+    <div class="containeD-box3" id="containeD-box3-id">
+      <p>3</p>
+    </div>
+    <div class="containeD-box4" id="containeD-box4-id">
+      <p>4</p>
+    </div>
+  </div>
+  <div class="containeD-trigger"> 
+    <div class="containeD-box1">
+      <p>1</p>
+    </div>
+    <div class="containeD-box2">
+      <p>2</p>
+    </div>
+    <div class="containeD-box3">
+      <p>3</p>
+    </div>
+    <div class="containeD-box4">
+      <p>4</p>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+  <div class="containeD-containeR-dynamic">
+    <div class="containeD-dynamic-trigger-card">
+      <div class="containeD-dynamic-card">
+        <p class="textP">I am here</p>
       </div>
     </div>
 
- -->
-<!-- 
-
-    <div class="containeD-containeR-dynamic">
-      <div class="containeD-dynamic-trigger-card">
-        <div class="containeD-dynamic-card">
-          <p class="textP">I am here</p>
-        </div>
-      </div>
-
-      <div class="containeD-dynamic-trigger-card">
-        <div class="containeD-dynamic-card">
-          <p class="textP">you are here</p>
-        </div>
-      </div>
-      <div class="containeD-dynamic-trigger-card">
-        <div class="containeD-dynamic-card">
-          <p class="textP">hehe</p>
-        </div>
-      </div>
-      <div class="containeD-dynamic-trigger-card" id="dynamic-trigger-id-1">
-        <div class="containeD-dynamic-card" id="dynamic-card-id-1">
-          <p class="textP">xs</p>
-        </div>
+    <div class="containeD-dynamic-trigger-card">
+      <div class="containeD-dynamic-card">
+        <p class="textP">you are here</p>
       </div>
     </div>
+    <div class="containeD-dynamic-trigger-card">
+      <div class="containeD-dynamic-card">
+        <p class="textP">hehe</p>
+      </div>
+    </div>
+    <div class="containeD-dynamic-trigger-card" id="dynamic-trigger-id-1">
+      <div class="containeD-dynamic-card" id="dynamic-card-id-1">
+        <p class="textP">xs</p>
+      </div>
+    </div>
+  </div>
 
-    
- -->
-    <!-- <div class="containeD-slideshow-card" id="containeD-slideshow-card-id-1">
-      <img class="containeD-slideshow-img" src="images/a.jpg" id="containeD-slideshow-img-id-1"/>
-      <img class="containeD-slideshow-img" src="images/b.jpg" id="containeD-slideshow-img-id-2"/>
-      <img class="containeD-slideshow-img" src="images/c.jpg" id="containeD-slideshow-img-id-3"/>
-      <img class="containeD-slideshow-img" src="images/download.jpg" id="containeD-slideshow-img-id-4"/>
-    </div> -->
+
+
+  <div class="containeD-slideshow-card" id="containeD-slideshow-card-id-1">
+    <img class="containeD-slideshow-img" src="images/a.jpg" id="containeD-slideshow-img-id-1"/>
+    <img class="containeD-slideshow-img" src="images/b.jpg" id="containeD-slideshow-img-id-2"/>
+    <img class="containeD-slideshow-img" src="images/c.jpg" id="containeD-slideshow-img-id-3"/>
+    <img class="containeD-slideshow-img" src="images/download.jpg" id="containeD-slideshow-img-id-4"/>
+  </div>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/ContaineD.js"></script>
-  <script type="text/javascript" src="js/example.js"></script>
+  <script type="text/javascript" src="js/examples.js"></script>
  </body>
 </html>

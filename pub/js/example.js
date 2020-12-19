@@ -48,6 +48,7 @@ var uniqueDynamicTrigger2 = document.getElementById("dynamic-trigger-id-4")
 containeD.dynamicPausableCard(uniqueDynamicCard2, "ease-in-out", "infinite", 1.5, "alternate", animationSequence2)
 containeD.dynamicPausableCard(uniqueDynamicTrigger2, "ease-in-out", "infinite", 1.5, "alternate", animationSequence3, "running")
 
+//library descriptions on this
 var triggerBox = document.querySelector(".containeD-trigger")
 var cardBox1 = document.querySelector(".containeD-box1")
 var cardBox2 = document.querySelector(".containeD-box2")
