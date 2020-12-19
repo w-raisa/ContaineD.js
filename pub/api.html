@@ -154,10 +154,13 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 					<ul>
 						<li class="method-container">
 							<div class="method-description">
-								<p>translatingCards(cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg)</p>
+								<pre>translatingCards(triggerBox, cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg)</pre>
 								<p>Perform a translation of cardBox as specified by the arguments. This function will cause all DOM elements that have the same HTML class 	as cardBox to be translated, hence the name translatingCards. If you would like to translate exactly one card and none other, see translateCard.</p>
 								<p>Arguments:</p>
 								<ul>
+									<li>
+										triggerBox: DOM object, the container containing the cards to translate.
+									</li>
 									<li>
 										cardBox: DOM object, the container to apply a translation to.
 									</li>
@@ -188,10 +191,13 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 
 						<li class="method-container">
 							<div class="method-description">
-								<p>translateCard(cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg)</p>
+								<pre>translateCard(triggerBox, cardBox, speed, timeFunction, translateX, translateY, endX, endY, rotationDeg)</pre>
 								<p>Perform a translation on cardBox as specified by the arguments. Only the element cardBox will be affected by the specified translation.</p>
 								<p>Arguments:</p>
 								<ul>
+									<li>
+										triggerBox: DOM object, the container containing the cards to translate.
+									</li>
 									<li>
 										cardBox: DOM object, specified the container to animate/apply a translation to.
 									</li>
@@ -223,7 +229,7 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 
 						<li class="method-container">
 							<div class="method-description">
-								<p>backgroundColourTransition(box, startingColour, endingColour, speed)</p>
+								<pre>backgroundColourTransition(box, startingColour, endingColour, speed)</pre>
 								<p>Apply a colour transition on box from startingColour to endingColor.</p>
 								<p>Arguments:</p>
 								<ul>
@@ -246,7 +252,8 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 
 						<li class="method-container">
 							<div class="method-description">
-								<p>dynamicPausableCards(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, animationPlayState=null)</p>
+								<pre>dynamicPausableCards(card, timeFunction, iterationCount, speed, animationDirection, animationSeq, 
+	animationPlayState=null)</pre>
 								<p>Applies an animation sequence to card</p>
 								<p>Arguments:</p>
 								<ul>
@@ -286,7 +293,8 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 
 						<li class="method-container">
 							<div class="method-description">
-								<p>slideshow(imgNodes, slideshowCard, timeFunction, iterationCount, speed, animationDirection, animationSeq=null)</p>
+								<pre>slideshow(imgNodes, slideshowCard, timeFunction, iterationCount, speed, animationDirection, 
+	animationSeq=null)</pre>
 								<p>Create a interactive and animatable slideshow presentation on the container slideshowCard, using images in imgNodes</p>
 								<p>Arguments:</p>
 								<ul>
