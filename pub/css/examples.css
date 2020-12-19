@@ -21,6 +21,7 @@
 }
 
 .containeD-slideshow-containeR {
+	margin-top: 200px;
 	background-color: black;
 	margin-left: 280px;
 }
@@ -46,6 +47,19 @@
 	margin-bottom: 50px;
 }
 
+.containeD-slideshow-p {
+	color: black;
+}
+
+.containeD-slideshow-h1 {
+	color: black;
+}
+
+
+.textP3 {
+	float: left;
+	text-align: left;
+}
 
 
 
