@@ -274,7 +274,23 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										animationDirection: str, specifies whether the animation will play forwards, backwards, or alternating between forwards and backwards. Accepted values are “normal”, “reverse”, “alternate”, and “alternate-reverse”. 
 									</li>
 									<li>
-										animationSeq: json, specifies the individual steps the animation will exhibit from start to end. The keys of the JSON object specify the step of the animation, and the values specify what will take place at this step of the animation. The keys of the JSON object must be ints, ranging between 0 and 100 inclusive. The values are another JSON object, whose keys represent the name of a CSS property, and the values represent the value that CSS property will have.
+										animationSeq: JSON, specifies the individual steps the animation will exhibit from start to end. The keys of the JSON object specify the step of the animation, and the values specify what will take place at this step of the animation. The keys of the JSON object must be ints, ranging between 0 and 100 inclusive. The values are another JSON object, whose keys represent the name of a CSS property, and the values represent the value that CSS property will have. An example value passed in for animationSeq would be:
+										<pre>		
+var animationSeq = {
+	"0": { 
+		"background": "pink",
+		"opacity": "1",
+		},
+	“42”: {
+		"opacity": “0.5”,
+		},
+	"100": {
+		"background": "yellow",
+		"opacity": "0",
+		},
+	}
+										</pre>
+										This is a valid value for animationSeq, it basically says “At step 0 of the animation (beginning of the animation), set the background colour of card (the DOM element passing into this function) to pink, and set its opacity to 1. At step 42 of the animation (42% of the animation has been played at this point), set the opacity of card to 0.5. At step 100 of the animation (100% of the animation has been played at this point, so we are at the end of the animation), set the background colour of card to yellow, and its opacity to 0.”
 									</li>
 									<li>
 										animationPlayState: str, specifies the state this animation will start off with, and the state it will be in when a mouse hovers over card. The state the animation will be in when mouse hovers over card will be opposite of animationPlayState. Accepts “running” and “paused”, which are opposites of each other. 
@@ -317,7 +333,23 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										animationDirection: str, specifies whether the animation will play forwards, backwards, or alternating between forwards and backwards. Accepted values are “normal”, “reverse”, “alternate”, and “alternate-reverse”. 
 									</li>
 									<li>
-										animationSeq: json, specifies the individual steps the animation will exhibit from start to end. The keys of the JSON object specify the step of the animation, and the values specify what will take place at this step of the animation. The keys of the JSON object must be ints, ranging between 0 and 100 inclusive. The values are another JSON object, whose keys represent the name of a CSS property, and the values represent the value that CSS property will have.
+										animationSeq: JSON, specifies the individual steps the animation will exhibit from start to end. The keys of the JSON object specify the step of the animation, and the values specify what will take place at this step of the animation. The keys of the JSON object must be ints, ranging between 0 and 100 inclusive. The values are another JSON object, whose keys represent the name of a CSS property, and the values represent the value that CSS property will have. An example value passed in for animationSeq would be:
+										<pre>		
+var animationSeq = {
+	"0": { 
+		"background": "pink",
+		"opacity": "1",
+		},
+	“42”: {
+		"opacity": “0.5”,
+		},
+	"100": {
+		"background": "yellow",
+		"opacity": "0",
+		},
+	}
+										</pre>
+										This is a valid value for animationSeq, it basically says “At step 0 of the animation (beginning of the animation), set the background colour of card (the DOM element passing into this function) to pink, and set its opacity to 1. At step 42 of the animation (42% of the animation has been played at this point), set the opacity of card to 0.5. At step 100 of the animation (100% of the animation has been played at this point, so we are at the end of the animation), set the background colour of card to yellow, and its opacity to 0.”
 									</li>
 								</ul>
 							</div>
