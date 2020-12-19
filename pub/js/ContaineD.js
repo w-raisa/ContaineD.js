@@ -1,15 +1,10 @@
 function ContaineD(triggerBoxes) {
-  this.domTree = document.getElementById("element-in-hierarchy")
-  // if (options.hasOwnProperty('speed')) { 
-  //   this.speed = options.speed
-  // }
   var containeD_containeR = document.querySelector(".containeD-containeR")
   var order = triggerBoxes.length
   for (var i = 0; i < (triggerBoxes.length - 1); i++) {
     triggerBoxes[i].style.zIndex = `${order}`
     order -= 1
   }
-  this.removedSlideshowImageNodes = []
   this.webkitKeyframeNames = []
 }
 
