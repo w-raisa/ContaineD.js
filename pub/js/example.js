@@ -33,35 +33,30 @@ var animationSequence3 = {
 // says ContaineD.js on it
 var uniqueDynamicCard = document.getElementById("dynamic-card-id-1")
 var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-1")
-containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 2, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 2, "alternate", animationSequence3)
+containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1.5, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1.5, "alternate", animationSequence3)
 
 // says Examples on it
 var uniqueDynamicCard = document.getElementById("dynamic-card-id-3")
 var uniqueDynamicTrigger = document.getElementById("dynamic-trigger-id-3")
-containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 2, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 2, "alternate", animationSequence3, "running")
+containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1.5, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1.5, "alternate", animationSequence3, "running")
 
 // says GitHub on it
 var uniqueDynamicCard2 = document.getElementById("dynamic-card-id-4")
 var uniqueDynamicTrigger2 = document.getElementById("dynamic-trigger-id-4")
-containeD.dynamicPausableCard(uniqueDynamicCard2, "ease-in-out", "infinite", 2, "alternate", animationSequence2)
-containeD.dynamicPausableCard(uniqueDynamicTrigger2, "ease-in-out", "infinite", 2, "alternate", animationSequence3, "running")
+containeD.dynamicPausableCard(uniqueDynamicCard2, "ease-in-out", "infinite", 1.5, "alternate", animationSequence2)
+containeD.dynamicPausableCard(uniqueDynamicTrigger2, "ease-in-out", "infinite", 1.5, "alternate", animationSequence3, "running")
 
 var triggerBox = document.querySelector(".containeD-trigger")
 var cardBox1 = document.querySelector(".containeD-box1")
 var cardBox2 = document.querySelector(".containeD-box2")
 var cardBox3 = document.querySelector(".containeD-box3")
 var cardBox4 = document.querySelector(".containeD-box4")
-containeD.translatingCards(triggerBox, cardBox1, 900, "ease-in-out", 200.5, 0, 0, 0, 0)
+containeD.translatingCards(triggerBox, cardBox1, 900, "ease-in-out", 190, 80, 0, 0, 0)
 containeD.backgroundColourTransition(cardBox1, "black", "pink", 7, "ll")
-containeD.translatingCards(triggerBox, cardBox2, 900, "ease-in-out", -202, 0, 0, 0, 0)
-containeD.backgroundColourTransition(cardBox2, "black", "pink", 7, "ll")
-
-
-
-
-
+containeD.translatingCards(triggerBox, cardBox2, 900, "ease-in-out", -190, -80, 0, 0, 0)
+containeD.backgroundColourTransition(cardBox2, "pink", "black", 7, "llp")
 
 
 
