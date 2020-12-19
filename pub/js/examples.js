@@ -42,19 +42,30 @@ containeD.translatingCards(triggerBox, cardBox4, 800, "ease-in-out", -150, 150, 
 
 // do the following to individually change the animation of cards of a single trigger, developer using this library must provide ids to the cards and the trigger.
 // here we are changing the 1st card and the 4th card of trigger3.
-var chosenTriggerBox = document.getElementById('containeD-trigger3');
-var card1 = document.getElementById('containeD-box1-id');
-containeD.translateCard(chosenTriggerBox, card1, "linear", 100, -100, 200, 0, 0, 180)
-var card4 = document.getElementById('containeD-box4-id');
-containeD.translateCard(chosenTriggerBox, card4, "linear", 400, 200, 200, 0, 0, 180)
+// var chosenTriggerBox = document.getElementById('containeD-trigger3');
+// var card1 = document.getElementById('containeD-box1-id');
+// containeD.translateCard(chosenTriggerBox, card1, "linear", 100, -100, 200, 0, 0, 180)
+// var card4 = document.getElementById('containeD-box4-id');
+// containeD.translateCard(chosenTriggerBox, card4, "linear", 400, 200, 200, 0, 0, 180)
 
 // changing the first card of trigger 2 only.
 var chosenTriggerBox2 = document.getElementById('containeD-trigger2');
 var card5 = document.getElementById('hehexd');
-containeD.translateCard(chosenTriggerBox2, card5, "linear", 400, 0, 200, 0, 0, 180)
+//containeD.translateCard(chosenTriggerBox2, card5, "linear", 400, 0, 200, 0, 0, 180)
 
-containeD.backgroundColourTransition(card5, "orange", "green", 1, "kk")
+containeD.backgroundColourTransition(card5, "black", "#c3268a", 1, "kk")
 containeD.backgroundColourTransition(triggerBox, "pink", "red", 1, "cc")
+
+
+var triggerBox3 = document.getElementById('containeD-trigger3');
+var card1Trigger3 = document.getElementById('containeD-card1-id-3');
+var card2Trigger3 = document.getElementById('containeD-card2-id-3');
+containeD.translateCard(triggerBox3, card1Trigger3, 900, "linear", 0, 200, 0, 0, 0, 0)
+containeD.translateCard(triggerBox3, card2Trigger3, 900, "linear", 200, 0, 0, 0, 0, 20)
+
+var triggerBox4 = document.getElementById('containeD-trigger4');
+var card1Trigger4 = document.getElementById('containeD-card1-id-4');
+containeD.translateCard(triggerBox4, card1Trigger4, 300, "linear", 100, 100, 0, 0, 0, 0)
 
 
 var card = document.querySelector(".containeD-dynamic-card")
