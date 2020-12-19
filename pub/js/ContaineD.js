@@ -38,8 +38,8 @@ ContaineD.prototype = { // prototype just declares functions
   backgroundColourTransition: function(box, startingColour, endingColour, speed) {
     const randomlength = Math.floor((Math.random() * 52) + 1);
     const randomWebkitName = this.createWebkitName(randomlength)
-    var animationSeq = {"0%": {"background-color": `${startingColour}`},
-                    "100%": {"background-color": `${endingColour}`},
+    var animationSeq = {"0": {"background-color": `${startingColour}`},
+                    "100": {"background-color": `${endingColour}`},
                   }
     box.style.animation = `${randomWebkitName} ${speed}s infinite alternate`;
     this.formatWebKitAnimationStr(randomWebkitName, animationSeq, box)
@@ -147,7 +147,7 @@ ContaineD.prototype = { // prototype just declares functions
     cssAnimation2.type = 'text/css'
     var dummystr = `@-webkit-keyframes ${x} {`;
     for (var key in animationSeq) {
-      dummystr += ` ${key} {`
+      dummystr += ` ${key}% {`
       for (var animationStepKey in animationSeq[key]) {
         dummystr += `${animationStepKey}: ${animationSeq[key][animationStepKey]}; ` 
       }

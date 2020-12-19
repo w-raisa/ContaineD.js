@@ -3,23 +3,23 @@ var triggerBoxes = document.querySelectorAll(".containeD-trigger")
 var containeD = new ContaineD(triggerBoxes)
 
 var animationSequence2 = {
-	"0%": {
+	"0": {
 		"bottom": "0", 
 		"background": "pink",
 		},
-	"100%": {
+	"100": {
 		"bottom": "10%", 
 		"background": "black",
 		},
 }
 
 var animationSequence3 = {
-	"0%": {
+	"0": {
 		"bottom": "0", 
 		"background": "black",
 		"opacity": "1",
 		},
-	"100%": {
+	"100": {
 		"bottom": "5%", 
 		"background": "pink",
 		"opacity": "1",
@@ -82,11 +82,11 @@ var trigger = document.querySelector(".containeD-dynamic-trigger-card")
 // // 	"50% {opacity: 0}",
 // // 	]
 var animationSequence2 = {
-	"0%": {
+	"0": {
 		"bottom": "0", 
 		"background": "#d976c2",
 		},
-	"100%": {
+	"100": {
 		"bottom": "10%", 
 		"background": "#c5c1fa",
 		},
@@ -94,12 +94,12 @@ var animationSequence2 = {
 containeD.dynamicPausableCards(trigger, "ease-in-out", "infinite", 1, "alternate", animationSequence2, "running") // passed in animationPlayState is the state you want to begin in. if animationPlayState = "paused", then the box will start off paused, and on hover, it will be running.
 
 var animationSequence3 = {
-	"0%": {
+	"0": {
 		"bottom": "0", 
 		"background": "pink",
 		"opacity": "1",
 		},
-	"100%": {
+	"100": {
 		"bottom": "10%", 
 		"background": "yellow",
 		"opacity": "0",
@@ -168,12 +168,12 @@ containeD.dynamicPausableCard(uniqueDynamicTrigger6, "ease-in-out", "infinite", 
 
 
 var animationSequence10 = {
-	"0%": {
+	"0": {
 		"bottom": "0", 
 		"background": "pink",
 		"opacity": "0",
 		},
-	"100%": {
+	"100": {
 		"bottom": "10%", 
 		"background": "#b4ffdc",
 		"opacity": "1",
@@ -202,11 +202,11 @@ containeD.dynamicPausableCard(uniqueDynamicTrigger9, "ease-in-out", "infinite", 
 
 
 var animationSequence4 = {
-	"0%": { 
+	"0": { 
 		"opacity": "1",
 		},
-	"100%": {
-		"opacity": "0.5",
+	"100": {
+		"opacity": "0",
 		},
 }
 
@@ -220,6 +220,15 @@ const imgNodes = [imgNode1,imgNode2,imgNode3, imgNode4] // first thing in the li
 containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate", animationSequence4)
 
 
+var animationSequence5 = {
+	"0": { 
+		"opacity": "1",
+		},
+	"100": {
+		"opacity": "0.99",
+		},
+}
+
 var slideshowCard2 = document.getElementById("containeD-slideshow-card-id-2")
 var imgNode9 = document.getElementById("containeD-slideshow-img-id-9")
 var imgNode8 = document.getElementById("containeD-slideshow-img-id-8")
@@ -227,14 +236,25 @@ var imgNode7 = document.getElementById("containeD-slideshow-img-id-7")
 var imgNode6 = document.getElementById("containeD-slideshow-img-id-6")
 var imgNode5 = document.getElementById("containeD-slideshow-img-id-5")
 const imgNodes2 = [imgNode5,imgNode6,imgNode7, imgNode8,imgNode9] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
-containeD.slideshow(imgNodes2, slideshowCard2, "ease-in-out", "infinite", 1, "alternate", animationSequence4)
+containeD.slideshow(imgNodes2, slideshowCard2, "ease-in-out", "infinite", 1, "alternate", animationSequence5)
+
+
+var animationSequence6 = {
+	"0": { 
+		"opacity": "1",
+		},
+	"100": {
+		"opacity": "0.75",
+		},
+}
+
 
 var slideshowCard3 = document.getElementById("containeD-slideshow-card-id-3")
 var imgNode12 = document.getElementById("containeD-slideshow-img-id-12")
 var imgNode11 = document.getElementById("containeD-slideshow-img-id-11")
 var imgNode10 = document.getElementById("containeD-slideshow-img-id-10")
 const imgNodes3 = [imgNode10, imgNode11,imgNode12] // first thing in the list is the last thing you want to show on the slide (it is the last image of the slide show, at the bottom of the deck)
-containeD.slideshow(imgNodes3, slideshowCard3, "ease-in-out", "infinite", 1, "alternate", animationSequence4)
+containeD.slideshow(imgNodes3, slideshowCard3, "ease-in-out", "infinite", 1, "alternate", animationSequence6)
 
 
 
