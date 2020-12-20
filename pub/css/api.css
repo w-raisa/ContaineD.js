@@ -96,10 +96,16 @@ code {
 
 
 .note {
+	margin-left: 21px;
 	font-size: 12px;
 }
 
 h3 {
 	margin: 30px;
+}
+
+.manip {
+	margin-top: 10px;
+	margin-left: 21px;
 }
 

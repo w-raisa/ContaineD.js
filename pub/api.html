@@ -14,7 +14,7 @@
 		  <div class="collapse navbar-collapse" id="navbarColor02">
 		    <ul class="navbar-nav mr-auto">
 		      <li class="nav-item">
-		        <a class="nav-link" href="./api.html">API</a>
+		        <a class="nav-link" href="./api.html">Documentation</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="./examples.html">Examples</a>
@@ -52,7 +52,7 @@
 			<h3>4. Write HTML markup to get ContaineD.js elements onto your page</h3>
 			<div>
 				<div class="code-container" id="code-container-1"> 
-					<p>If you would like to use the Translating Deck of Cards (as seen on the Examples page), incorporate the following into your HTML:</p>
+					<p class="manip">If you would like to use the Translating Deck of Cards (as seen on the Examples page), incorporate the following into your HTML:</p>
 					<div class="HTML-examples">
 						<pre>
 &lt;div class="containeD-containeR"&gt;
@@ -69,7 +69,7 @@
 &lt;/div&gt;
 						</pre>
 					</div>
-					<p>If you would like to use the Dynamic Pausable Cards (as seen on the Examples page), incorporate the following into your HTML:</p>
+					<p class="manip">If you would like to use the Dynamic Pausable Cards (as seen on the Examples page), incorporate the following into your HTML:</p>
 					<div class="HTML-examples">
 						<pre>
 &lt;div class="containeD-containeR-dynamic"&gt;
@@ -80,7 +80,7 @@
 &lt;/div&gt;
 						</pre>
 					</div>
-					<p>If you would like to use Slideshow (as seen on the Examples page), incorporate the following into your HTML:</p>
+					<p class="manip">If you would like to use Slideshow (as seen on the Examples page), incorporate the following into your HTML:</p>
 					<div class="HTML-examples">
 						<pre>
 &lt;div class="containeD-slideshow-containeR"&gt;
@@ -104,7 +104,7 @@
 			<h3>6. Make DOM manipulations in JavaScript using methods provided by ContaineD.js</h3>
 			<div>
 				<div class="code-container"> 
-					<p>If you would like to manipulate the Translating Deck of Cards (as seen on the Examples page), incorporate the following into your JavaScript:</p>
+					<p class="manip">If you would like to manipulate the Translating Deck of Cards (as seen on the Examples page), incorporate the following into your JavaScript:</p>
 					<p class="note">Note: the method translatingCards is a method provided by ContaineD.js, see below for a description of this method and other methods.</p>
 					<div class="HTML-examples">
 						<pre>
@@ -121,7 +121,7 @@ containeD.translatingCards(cardBox3, 600, "ease-in-out", -50, 200, 0, 0, 20)
 containeD.translatingCards(cardBox4, 800, "ease-in-out", -150, 150, 0, 0, 20)
 						</pre>
 					</div>
-					<p>If you would like to manipulate the Dynamic Pausable Cards (as seen on the Examples page), incorporate the following into your JavaScript:</p>
+					<p class="manip">If you would like to manipulate the Dynamic Pausable Cards (as seen on the Examples page), incorporate the following into your JavaScript:</p>
 					<p class="note">Note: the method dynamicPausableCard is a method provided by ContaineD.js, see below for a description of this method and other methods.</p>
 					<div class="HTML-examples">
 						<pre>
@@ -131,7 +131,7 @@ containeD.dynamicPausableCard(uniqueDynamicCard, "ease-in-out", "infinite", 1, "
 containeD.dynamicPausableCard(uniqueDynamicTrigger, "ease-in-out", "infinite", 1, "alternate", animationSequence3, "running")
 						</pre>
 					</div>
-					<p>If you would like to manipulate the Slideshow (as seen on the Examples page), incorporate the following into your JavaScript:</p>
+					<p class="manip">If you would like to manipulate the Slideshow (as seen on the Examples page), incorporate the following into your JavaScript:</p>
 					<p class="note">Note: the method slideshow is a method provided by ContaineD.js, see below for a description of this method and other methods.</p>
 					<div class="HTML-examples">
 						<pre>
@@ -165,25 +165,25 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										cardBox: DOM object, the container to apply a translation to.
 									</li>
 									<li>
-										speed: int, specifies how fast the translation is.
+										speed: int, specifies how fast the translation is in milliseconds. Valid input is any int greater than or equal to 0.
 									</li>
 									<li>
-										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the function with different values for n.
 									</li>
 									<li>
-										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take in any real number.
 									</li>
 									<li>
-										translateY: int, specifies how many units in Y on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+										translateY: int, specifies how many units in Y on a standard 2D Cartesian-Plane cardBox will be translated. Can take in any real number.
 									</li>
 									<li>
-										endX: int, specifies the X coordinate to terminate the translation at.
+										endX: int, specifies the X coordinate to terminate the translation at. Takes in any real number.
 									</li>
 									<li>
-										endY: int, specifies the Y coordinate to terminate the translation at.
+										endY: int, specifies the Y coordinate to terminate the translation at. Takes in any real number.
 									</li>
 									<li>
-										rotationDeg: int, specifies in degrees how much to rotate cardBox by during the translation.
+										rotationDeg: int, specifies in degrees how much to rotate cardBox by during the translation. Takes in any real number.
 									</li>
 								</ul>
 							</div>
@@ -199,28 +199,28 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										triggerBox: DOM object, the container containing the cards to translate.
 									</li>
 									<li>
-										cardBox: DOM object, specified the container to animate/apply a translation to.
+										cardBox: DOM object, the container to apply a translation to.
 									</li>
 									<li>
-										speed:  int, specifies how fast the translation is.
-									</li>
-									<li> 
-										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+										speed: int, specifies how fast the translation is in milliseconds. Valid input is any int greater than or equal to 0.
 									</li>
 									<li>
-										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the function with different values for n.
 									</li>
 									<li>
-										translateY: int, specifies how many units in Y on a standard 2D Cartesian-Plane cardBox will be translated. Can take any real value.
+										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take in any real number.
 									</li>
 									<li>
-										endX: int, specifies the X coordinate to terminate the translation at.
+										translateY: int, specifies how many units in Y on a standard 2D Cartesian-Plane cardBox will be translated. Can take in any real number.
 									</li>
 									<li>
-										endY: int, specifies the Y coordinate to terminate the translation at.
+										endX: int, specifies the X coordinate to terminate the translation at. Takes in any real number.
 									</li>
 									<li>
-										rotationDeg: int, specifies in degrees how much to rotate cardBox by during the translation.
+										endY: int, specifies the Y coordinate to terminate the translation at. Takes in any real number.
+									</li>
+									<li>
+										rotationDeg: int, specifies in degrees how much to rotate cardBox by during the translation. Takes in any real number.
 									</li>
 								</ul>
 							</div>
@@ -234,7 +234,7 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 								<p>Arguments:</p>
 								<ul>
 									<li>
-										box: DOM element, specifies the container to animate/set a background colour transition on.
+										box: DOM element, the DOM container you wish to apply a background colour transition on.
 									</li>
 									<li>
 										startingColour: str, specifies the colour the transition will begin with. Accepts names of colours ie startingColour=“black” is valid, as well as hexadecimal values of colours ie startingColor=“#000000” is valid.
@@ -243,7 +243,7 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										endingColour: str, specifies the colour the transition will end with. Accepts names of colours ie endingColour=“black” is valid, as well as hexadecimal values of colours ie endingColor=“#000000” is valid.
 									</li>
 									<li>
-										speed: int, specifies how fast the animation is.
+										speed: int, specifies how fast the animation is in seconds.
 									</li>
 								</ul>
 							</div>
@@ -258,20 +258,20 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 								<p>Arguments:</p>
 								<ul>
 									<li>
-										card: DOM element, the container to animate
+										card: DOM element, the container you wish to apply an animation on.
 									</li>
 									<li>
-										timeFunction:  str, specifies the rate the animation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, please take a look at <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a>; it lets you play around with the function with different values for n.
 									</li>
 									<li> 
-										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (int). If you would like animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
+										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (an int value greater than or equal to 0). If you would like animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
 
 									</li>
 									<li>
-										speed:  int, specifies how fast the animation is.
+										speed: int, specifies how fast the animation is in seconds. Valid input is any int greater than or equal to 0.
 									</li>
 									<li>
-										animationDirection: str, specifies whether the animation will play forwards, backwards, or alternating between forwards and backwards. Accepted values are “normal”, “reverse”, “alternate”, and “alternate-reverse”. 
+										animationDirection: str, specifies whether the order this animation will follow. Accepted values are “normal”, “reverse”, “alternate”, and “alternate-reverse”.
 									</li>
 									<li>
 										animationSeq: JSON, specifies the individual steps the animation will exhibit from start to end. The keys of the JSON object specify the step of the animation, and the values specify what will take place at this step of the animation. The keys of the JSON object must be ints, ranging between 0 and 100 inclusive. The values are another JSON object, whose keys represent the name of a CSS property, and the values represent the value that CSS property will have. An example value passed in for animationSeq would be:
@@ -290,7 +290,7 @@ var animationSeq = {
 		},
 	}
 										</pre>
-										This is a valid value for animationSeq, it basically says “At step 0 of the animation (beginning of the animation), set the background colour of card (the DOM element passing into this function) to pink, and set its opacity to 1. At step 42 of the animation (42% of the animation has been played at this point), set the opacity of card to 0.5. At step 100 of the animation (100% of the animation has been played at this point, so we are at the end of the animation), set the background colour of card to yellow, and its opacity to 0.”
+										This is a valid value for animationSeq, it basically says “At step 0 of the animation (beginning of the animation), set the background colour of card (the DOM element passing into this function) to pink, and set its opacity to 1. At step 42 of the animation (42% of the animation has been played at this point), set the opacity of card to 0.5. At step 100 of the animation (100% of the animation has been played at this point, so we are at the end of the animation), set the background colour of card to yellow, and its opacity to 0”. This JSON object is something you as the developer create, you get to choose which CSS properties you want to change, what you want to change it to, and at what step. ContaineD.js handles the actual animation for you ;)
 									</li>
 									<li>
 										animationPlayState: str, specifies the state this animation will start off with, and the state it will be in when a mouse hovers over card. The state the animation will be in when mouse hovers over card will be opposite of animationPlayState. Accepts “running” and “paused”, which are opposites of each other. 
@@ -321,13 +321,13 @@ var animationSeq = {
 										slideshowCard: DOM object, specifies the container the slideshow will take place in.
 									</li>
 									<li> 
-										timeFunction:  str, specifies the rate the animation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”.
+										timeFunction:  str, specifies the rate the animation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the function with different values for n. 
 									</li>
 									<li>
 										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (int). If you would like animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
 									</li>
 									<li>
-										speed:  int, specifies how fast the animation is.
+										speed:  int, specifies how fast the animation is in seconds. Valid input is any int greater than or equal to 0.
 									</li>
 									<li>
 										animationDirection: str, specifies whether the animation will play forwards, backwards, or alternating between forwards and backwards. Accepted values are “normal”, “reverse”, “alternate”, and “alternate-reverse”. 
@@ -349,7 +349,7 @@ var animationSeq = {
 		},
 	}
 										</pre>
-										This is a valid value for animationSeq, it basically says “At step 0 of the animation (beginning of the animation), set the background colour of card (the DOM element passing into this function) to pink, and set its opacity to 1. At step 42 of the animation (42% of the animation has been played at this point), set the opacity of card to 0.5. At step 100 of the animation (100% of the animation has been played at this point, so we are at the end of the animation), set the background colour of card to yellow, and its opacity to 0.”
+										This is a valid value for animationSeq, it basically says “At step 0 of the animation (beginning of the animation), set the background colour of card (the DOM element passing into this function) to pink, and set its opacity to 1. At step 42 of the animation (42% of the animation has been played at this point), set the opacity of card to 0.5. At step 100 of the animation (100% of the animation has been played at this point, so we are at the end of the animation), set the background colour of card to yellow, and its opacity to 0.” This JSON object is something you as the developer create, you get to choose which CSS properties you want to change, what you want to change it to, and at what step. ContaineD.js handles the actual animation for you ;)
 									</li>
 								</ul>
 							</div>
