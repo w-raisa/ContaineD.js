@@ -20,7 +20,7 @@ var animationSequence3 = {
 		"opacity": "1",
 		},
 	"100": {
-		"bottom": "5%", 
+		"bottom": "10%", 
 		"background": "pink",
 		"opacity": "1",
 		},
