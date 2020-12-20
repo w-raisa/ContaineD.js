@@ -169,7 +169,7 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										speed: int, specifies how fast the translation is in milliseconds. Valid input is any int greater than or equal to 0.
 									</li>
 									<li>
-										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the function with different values for n.
+										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the cubic-bezier function with different values for n.
 									</li>
 									<li>
 										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take in any real number.
@@ -206,7 +206,7 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										speed: int, specifies how fast the translation is in milliseconds. Valid input is any int greater than or equal to 0.
 									</li>
 									<li>
-										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the function with different values for n.
+										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the cubic-bezier function with different values for n.
 									</li>
 									<li>
 										translateX: int, specifies how many units in X on a standard 2D Cartesian-Plane cardBox will be translated. Can take in any real number.
@@ -265,7 +265,7 @@ containeD.slideshow(imgNodes, slideshowCard, "linear", "infinite", 1, "alternate
 										timeFunction: str, specifies the rate the translation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, please take a look at <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a>; it lets you play around with the function with different values for n.
 									</li>
 									<li> 
-										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (an int value greater than or equal to 0). If you would like animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
+										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (an int value greater than or equal to 0). If you would like the animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
 
 									</li>
 									<li>
@@ -316,16 +316,16 @@ var animationSeq = {
 								<p>Arguments:</p>
 								<ul>
 									<li>
-										imgNodes: array, holds the image DOM elements of the images to appear in the slideshow. The imgNode at the first index of the array is the last image to appear in the slideshow, the imgNode at the second index of the array is the second last image to appear in the slideshow,... and so on.
+										imgNodes: Array, holds the image DOM elements of the images to appear in the slideshow. The image DOM element at the first index of the array is the last image to appear in the slideshow, the image DOM element at the second index of the array is the second last image to appear in the slideshow,... and so on.
 									</li>
 									<li>
-										slideshowCard: DOM object, specifies the container the slideshow will take place in.
+										slideshowCard: DOM object, specifies the container the images are contained in. The slideshow will take place in the DOM object specified by slideshowCard.
 									</li>
 									<li> 
-										timeFunction:  str, specifies the rate the animation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the function with different values for n. 
+										timeFunction:  str, specifies the rate the animation will take place at. timeFunction can be any one value of “ease”, “linear”, “ease-in”, “ease-out”, “ease-in-out”,  or “cubic-bezier(n,n,n,n)”. If you would like to know what values of n to give to the cubic-bezier function, should you choose that, <a href="https://cubic-bezier.com/#.17,.67,.83,.67">this website</a> lets you play around with the cubic-bezier function with different values for n.
 									</li>
 									<li>
-										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (int). If you would like animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
+										iterationCount: str/int, specifies the number of times this animation will play. If you would like the animation to play x number of times and then stop, set iterationCount = x (int). If you would like the animation to repeat indefinitely and never stop, set iterationCount=“infinite” (str).
 									</li>
 									<li>
 										speed:  int, specifies how fast the animation is in seconds. Valid input is any int greater than or equal to 0.
